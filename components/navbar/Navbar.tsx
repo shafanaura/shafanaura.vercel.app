@@ -15,7 +15,7 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react'
-import NavLink from 'components/link/NavLink'
+import UnderlineLink from 'components/link/UnderlineLink'
 import Space from 'components/Space'
 import { useRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
@@ -43,9 +43,9 @@ const DesktopContent = () => (
         </Text>
         <Flex alignItems="center" gap={{ base: '12px', md: '42px' }}>
           {LINK.map((item, idx) => (
-            <NavLink key={idx} href={item.href}>
-              {item.label}
-            </NavLink>
+            <UnderlineLink key={idx}>
+              <Link href={item.href}>{item.label}</Link>
+            </UnderlineLink>
           ))}
           <Link href="https://linktr.ee/shafanaura" target="_blank">
             <Button colorScheme="brandBlack">{"Let's"} talk</Button>
@@ -59,9 +59,9 @@ const DesktopContent = () => (
 const MobileContent = () => (
   <Stack spacing="18px">
     {LINK.map((item, idx) => (
-      <NavLink key={idx} href={item.href}>
-        {item.label}
-      </NavLink>
+      <UnderlineLink key={idx}>
+        <Link href={item.href}>{item.label}</Link>
+      </UnderlineLink>
     ))}
   </Stack>
 )

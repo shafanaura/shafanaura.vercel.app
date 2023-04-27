@@ -1,6 +1,6 @@
-import { Box, Button, Divider, Link, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Link, Text, VStack } from '@chakra-ui/react'
 import Space from 'components/Space'
-import React from 'react'
+import UnderlineLink from './link/UnderlineLink'
 
 const Footer = () => {
   return (
@@ -21,10 +21,26 @@ const Footer = () => {
             </Button>
           </Link>
         </VStack>
-        <Divider h="1px" bg="brandBlack.500" mt="32px" />
-        <VStack py="24px">
-          <Text fontSize="sm">Copyright ©2023 Shafa Naura P.A</Text>
-        </VStack>
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          justifyContent="space-between"
+          alignItems="center"
+          pt="44px"
+          pb="24px"
+          gap="24px"
+        >
+          <Flex gap="12px">
+            <UnderlineLink fontSize="sm">
+              <Link
+                target="_blank"
+                href="https://github.com/shafanaura/shafanaura.vercel.app"
+              >
+                Source Code
+              </Link>
+            </UnderlineLink>
+          </Flex>
+          <Text fontSize="sm">© Shafa Naura P.A 2023 </Text>
+        </Flex>
       </Space>
     </Box>
   )
