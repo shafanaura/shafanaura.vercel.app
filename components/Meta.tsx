@@ -10,7 +10,7 @@ const Meta = () => {
         content="a Front-End Web Developer who specialize in crafting flawless,
         user-friendly websites that exceed expectations. With an eye for
         detail and a passion for excellence, I bring design concepts to life.
-        Currently, I take on project-based work through"
+        Currently, I take on project-based work through upwork"
       />
       <meta
         name="keywords"
@@ -27,7 +27,7 @@ const Meta = () => {
         content="a Front-End Web Developer who specialize in crafting flawless,
           user-friendly websites that exceed expectations. With an eye for
           detail and a passion for excellence, I bring design concepts to life.
-          Currently, I take on project-based work through"
+          Currently, I take on project-based work through upwork"
       />
       <meta property="og:image" content="/images/thumbnail.png" />
       <meta property="og:url" content="http://shafanaura.com/" />
@@ -40,7 +40,7 @@ const Meta = () => {
         content="a Front-End Web Developer who specialize in crafting flawless,
           user-friendly websites that exceed expectations. With an eye for
           detail and a passion for excellence, I bring design concepts to life.
-          Currently, I take on project-based work through"
+          Currently, I take on project-based work through upwork"
       />
       <meta property="twitter:image" content="/images/thumbnail.png" />
     </Head>
