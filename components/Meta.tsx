@@ -4,10 +4,13 @@ import React from 'react'
 const Meta = () => {
   return (
     <Head>
-      <title>Shafa - Frontend Web Developer</title>
+      <title>Shafa Naura - Frontend Web Developer</title>
       <meta
         name="description"
-        content="Hi, I'm Shafa, a frontend developer who specializes in creating visually stunning interfaces"
+        content="a Front-End Web Developer who specialize in crafting flawless,
+        user-friendly websites that exceed expectations. With an eye for
+        detail and a passion for excellence, I bring design concepts to life.
+        Currently, I take on project-based work through"
       />
       <meta
         name="keywords"
@@ -21,7 +24,10 @@ const Meta = () => {
       <meta property="og:title" content="Frontend Web Developer" />
       <meta
         property="og:description"
-        content="Hi, I'm Shafa, a frontend developer who specializes in creating visually stunning interfaces"
+        content="a Front-End Web Developer who specialize in crafting flawless,
+          user-friendly websites that exceed expectations. With an eye for
+          detail and a passion for excellence, I bring design concepts to life.
+          Currently, I take on project-based work through"
       />
       <meta property="og:image" content="/images/thumbnail.png" />
       <meta property="og:url" content="http://shafanaura.com/" />
@@ -31,7 +37,10 @@ const Meta = () => {
       <meta property="twitter:title" content="Frontend Web Developer" />
       <meta
         property="twitter:description"
-        content="Hi, I'm Shafa, a frontend developer who specializes in creating visually stunning interfaces"
+        content="a Front-End Web Developer who specialize in crafting flawless,
+          user-friendly websites that exceed expectations. With an eye for
+          detail and a passion for excellence, I bring design concepts to life.
+          Currently, I take on project-based work through"
       />
       <meta property="twitter:image" content="/images/thumbnail.png" />
     </Head>
