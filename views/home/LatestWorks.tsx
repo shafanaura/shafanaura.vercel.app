@@ -94,7 +94,7 @@ const WrapTotal = ({
 
 const RecentWork = () => {
   return (
-    <section id="works">
+    <section id="work">
       <Space mt="-280px" pb="42px">
         <Flex
           direction={{ base: 'column', md: 'row' }}

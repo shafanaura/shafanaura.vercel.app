@@ -15,7 +15,7 @@ const LIST = [
 
 const PersonalProject = () => {
   return (
-    <Space py="42px" id="projects">
+    <Space py="42px" id="project">
       <VStack textAlign="center" spacing={0}>
         <Text
           w={{ md: '50%' }}

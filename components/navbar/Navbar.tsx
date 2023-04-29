@@ -22,12 +22,20 @@ import { FiMenu } from 'react-icons/fi'
 
 const LINK = [
   {
-    label: 'Works',
-    href: '#works',
+    label: 'About',
+    href: '/about',
   },
   {
-    label: 'Projects',
-    href: '#projects',
+    label: 'Work',
+    href: '/#work',
+  },
+  {
+    label: 'Project',
+    href: '/#project',
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
   },
 ]
 
