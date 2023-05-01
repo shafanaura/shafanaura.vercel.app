@@ -1,6 +1,6 @@
 import { Avatar, Box, Button, Flex, Link, Text } from '@chakra-ui/react'
-import Space from 'components/Space'
-import { ME_IMG } from 'constant/img'
+import Space from 'src/components/Space'
+import { ME_IMG } from 'src/variables/img'
 
 const Hero = () => {
   return (

@@ -1,5 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react'
-import config from 'constant/config'
+import config from 'src/variables/config'
 import Document, {
   DocumentContext,
   Head,

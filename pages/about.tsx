@@ -1,5 +1,5 @@
-import Layout from 'components/Layout'
-import Space from 'components/Space'
+import Layout from 'src/components/Layout'
+import Space from 'src/components/Space'
 import React from 'react'
 
 const About = () => {

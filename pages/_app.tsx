@@ -1,9 +1,9 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import '../styles/globals.css'
+import 'src/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Manrope } from 'next/font/google'
-import theme from 'styles/themes/theme'
-import Meta from 'components/Meta'
+import theme from 'src/styles/themes/theme'
+import Meta from 'src/components/Meta'
 
 const manrope = Manrope({
   weight: ['200', '300', '400', '500', '600', '700', '800'],

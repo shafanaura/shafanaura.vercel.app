@@ -15,8 +15,8 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react'
-import UnderlineLink from 'components/link/UnderlineLink'
-import Space from 'components/Space'
+import UnderlineLink from 'src/components/link/UnderlineLink'
+import Space from 'src/components/Space'
 import { useRef } from 'react'
 import { FiMenu } from 'react-icons/fi'
 

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Link, Text, VStack } from '@chakra-ui/react'
-import Space from 'components/Space'
+import Space from 'src/components/Space'
 import UnderlineLink from './link/UnderlineLink'
 
 const Footer = () => {

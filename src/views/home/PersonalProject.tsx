@@ -1,7 +1,7 @@
 import { Box, SimpleGrid, Text, VStack } from '@chakra-ui/react'
-import Space from 'components/Space'
-import ProjectCard from 'components/card/ProjectCard'
-import { SAAS_IMG } from 'constant/img'
+import Space from 'src/components/Space'
+import ProjectCard from 'src/components/card/ProjectCard'
+import { SAAS_IMG } from 'src/variables/img'
 
 const LIST = [
   {
