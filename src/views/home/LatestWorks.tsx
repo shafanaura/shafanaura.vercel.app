@@ -1,7 +1,7 @@
 import { Box, Flex, GridItem, SimpleGrid, Text } from '@chakra-ui/react'
 import Space from 'src/components/Space'
 import ProjectCard from 'src/components/card/ProjectCard'
-import { ALOY_IMG, LEVELUP_IMG, RPIO_IMG } from 'src/variables/img'
+import { ALOY_IMG, BT_IMG, LEVELUP_IMG, RPIO_IMG } from 'src/variables/img'
 
 const LIST = [
   {
@@ -20,6 +20,7 @@ const LIST = [
       'Chakra UI',
       'Tailwind CSS',
       'Stripe',
+      'Formik',
     ],
   },
   {
@@ -35,11 +36,12 @@ const LIST = [
       'React Table',
       'React Query',
       'Chakra UI',
+      'Formik',
     ],
   },
   {
-    // img: ALOY_IMG,
-    // href: '#',
+    img: BT_IMG,
+    href: 'https://www.backwatertrip.com/',
     title: 'Backwater Trip',
     description:
       'A Backwater Trip in Kerala is a journey on traditional houseboats called kettuvallams to enjoy nature and local culture along the river and coastal areas.',
@@ -50,6 +52,7 @@ const LIST = [
       'React Query',
       'Chakra UI',
       'Tailwind CSS',
+      'Formik',
     ],
   },
   {
@@ -58,7 +61,7 @@ const LIST = [
     title: 'Level Up',
     description:
       'Level Up by Digital Amoeba is a platform that provides opportunities for sharing knowledge and practical skills in the professional world to Indonesian youth in leading companies.',
-    tech: ['Next.js', 'React Table', 'React Query', 'Material UI'],
+    tech: ['Next.js', 'React Table', 'React Query', 'Material UI', 'Formik'],
   },
 ]
 
