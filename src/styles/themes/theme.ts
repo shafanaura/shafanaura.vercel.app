@@ -1,4 +1,4 @@
-import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
+import { color, extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
 import { colorTheme } from './colors/color'
 import buttonTheme from './components/button'
 
@@ -14,8 +14,10 @@ const theme = extendTheme(
     styles: {
       global: {
         body: {
-          textColor: colorTheme.brandBlack[900],
           bgColor: 'blackAlpha.50',
+        },
+        p: {
+          color: 'blackAlpha.800',
         },
       },
     },
