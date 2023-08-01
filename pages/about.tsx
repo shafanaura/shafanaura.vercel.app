@@ -1,12 +1,12 @@
-import Layout from 'src/components/Layout'
+import HomeLayout from 'src/components/layout/HomeLayout'
 import Space from 'src/components/Space'
 import React from 'react'
 
 const About = () => {
   return (
-    <Layout>
+    <HomeLayout>
       <Space>About</Space>
-    </Layout>
+    </HomeLayout>
   )
 }
 
