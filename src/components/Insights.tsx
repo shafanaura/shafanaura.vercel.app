@@ -1,7 +1,8 @@
 "use client";
 
 import { LineReveal, Reveal } from "@/components/ui/motion";
-import { Eyebrow, Shell, TagChip } from "@/components/ui/primitives";
+import { TechChip } from "@/components/TechIcon";
+import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { INSIGHTS } from "@/lib/site";
 
 export function Insights() {
@@ -33,9 +34,7 @@ export function Insights() {
             >
               <div className="flex flex-wrap gap-2">
                 {note.tags.map((tag) => (
-                  <TagChip key={tag} tone="surface">
-                    {tag}
-                  </TagChip>
+                  <TechChip key={tag} label={tag} tone="surface" />
                 ))}
               </div>
               <h3 className="mt-4 font-display text-xl font-bold tracking-tight">

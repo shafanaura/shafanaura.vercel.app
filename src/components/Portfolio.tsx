@@ -3,7 +3,8 @@
 import { ArrowUpRight } from "@/components/icons";
 import { ProjectCover } from "@/components/ProjectMedia";
 import { LineReveal, Reveal } from "@/components/ui/motion";
-import { Eyebrow, Shell, TagChip } from "@/components/ui/primitives";
+import { TechChip } from "@/components/TechIcon";
+import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { PROJECTS, type Project } from "@/lib/site";
 import { useSite } from "@/providers/LumoraProvider";
 
@@ -24,7 +25,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         <ProjectCover
           project={project}
           label={project.status === "archived" ? "archived" : project.id}
-          className="min-h-44 md:col-span-4 md:min-h-full"
+          className="min-h-48 border-b border-ink/20 md:col-span-4 md:min-h-full md:border-b-0 md:border-r"
         />
 
         <div className="flex flex-col justify-between gap-5 p-6 sm:p-8 md:col-span-8">
@@ -54,9 +55,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <TagChip key={tag} tone="surface">
-                {tag}
-              </TagChip>
+              <TechChip key={tag} label={tag} tone="surface" />
             ))}
           </div>
         </div>

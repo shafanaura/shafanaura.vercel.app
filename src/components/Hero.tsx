@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AvatarPhoto } from "@/components/AvatarPhoto";
 import { Reveal } from "@/components/ui/motion";
+import { TechChip } from "@/components/TechIcon";
 import { PillButton, Shell } from "@/components/ui/primitives";
 import { HeroField } from "@/components/HeroField";
 import { EASE } from "@/lib/constants";
@@ -43,12 +45,11 @@ export function Hero() {
               </p>
 
               <div className="mb-4 flex items-center gap-3">
-                <img
-                  src={SITE.avatar}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="size-10 rounded-full object-cover ring-2 ring-white/25"
+                <AvatarPhoto
+                  width={48}
+                  height={48}
+                  className="size-12 rounded-full ring-2 ring-white/25"
+                  imgClassName="rounded-full"
                 />
                 <p className="font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
                   {HERO.brandLine}
@@ -98,11 +99,8 @@ export function Hero() {
               </p>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {HERO.stack.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-md border border-white/10 bg-ink/40 px-2.5 py-1.5 font-mono text-xs text-white/75"
-                  >
-                    {item}
+                  <li key={item}>
+                    <TechChip label={item} tone="hero" />
                   </li>
                 ))}
               </ul>

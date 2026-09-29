@@ -18,6 +18,13 @@ export function PageLoader() {
     stopScroll();
     const start = performance.now();
     let raf = 0;
+    let exitTimer = 0;
+    let released = false;
+    const releaseScroll = () => {
+      if (released) return;
+      released = true;
+      startScroll();
+    };
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / FILL_MS);
       setProgress(Math.round(easeInOutCubic(t) * 100));
@@ -25,15 +32,21 @@ export function PageLoader() {
         raf = requestAnimationFrame(tick);
       } else {
         setExiting(true);
-        window.setTimeout(() => {
+        exitTimer = window.setTimeout(() => {
           setReady(true);
-          startScroll();
+          releaseScroll();
           setGone(true);
         }, 650);
       }
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(exitTimer);
+      // Balance stopScroll — React Strict Mode remounts would otherwise leave
+      // html overflow-y:hidden and Lenis stopped permanently.
+      releaseScroll();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

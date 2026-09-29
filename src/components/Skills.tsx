@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "@/components/icons";
+import { TechChip } from "@/components/TechIcon";
 import { LineReveal, Reveal } from "@/components/ui/motion";
 import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { SKILLS } from "@/lib/site";
@@ -50,6 +51,11 @@ export function Skills() {
                   <p className="mt-2 text-sm leading-relaxed text-muted">
                     {skill.description}
                   </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {skill.tech.map((t) => (
+                      <TechChip key={t} label={t} tone="surface" />
+                    ))}
+                  </div>
                 </div>
               </button>
             </Reveal>

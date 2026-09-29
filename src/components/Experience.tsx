@@ -1,5 +1,6 @@
 "use client";
 
+import { TechChip } from "@/components/TechIcon";
 import { LineReveal, Reveal } from "@/components/ui/motion";
 import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { EXPERIENCE, SITE } from "@/lib/site";
@@ -68,6 +69,13 @@ export function Experience() {
                     className="text-sm leading-relaxed text-muted before:mr-2 before:text-accent before:content-['→']"
                   >
                     {line}
+                  </li>
+                ))}
+              </ul>
+              <ul className="mt-3.5 flex list-none flex-wrap gap-1.5 p-0">
+                {job.stack.map((tech) => (
+                  <li key={tech}>
+                    <TechChip label={tech} tone="plain" iconSize="0.75rem" />
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,6 @@
 "use client";
 
+import { AvatarPhoto } from "@/components/AvatarPhoto";
 import {
   GithubIcon,
   InstagramIcon,
@@ -54,15 +55,14 @@ export function About() {
             from={{ opacity: 0, transform: "translateY(16px)" }}
           >
             <div className="rounded-2xl border border-line bg-surface p-6">
-              <div className="flex items-center gap-3">
-                <img
-                  src={SITE.avatar}
-                  alt={SITE.name}
-                  width={48}
-                  height={48}
-                  className="size-12 shrink-0 rounded-xl object-cover ring-1 ring-line"
+              <div className="flex items-start gap-4">
+                <AvatarPhoto
+                  width={112}
+                  height={112}
+                  className="size-28 rounded-2xl ring-1 ring-line"
+                  imgClassName="rounded-2xl"
                 />
-                <div>
+                <div className="pt-1">
                   <p className="font-mono text-[0.65rem] tracking-[0.16em] text-muted uppercase">
                     Signal
                   </p>

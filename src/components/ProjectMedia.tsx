@@ -8,6 +8,10 @@ export function projectCoverSrc(project: Project) {
   return project.screenshots.find((s) => s.src)?.src;
 }
 
+function ShotVeil() {
+  return <div className="project-media__veil" aria-hidden />;
+}
+
 export function ProjectCover({
   project,
   label,
@@ -30,13 +34,18 @@ export function ProjectCover({
   }
 
   return (
-    <div className={`relative overflow-hidden bg-ink/5 ${className}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={label ?? project.name}
-        className="absolute inset-0 size-full object-cover object-top"
-      />
+    <div
+      className={`project-media project-media--inset project-media--card ${className}`}
+    >
+      <div className="project-media__frame absolute inset-[0.7rem]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={label ?? project.name}
+          className="project-media__img absolute inset-0 size-full object-cover"
+        />
+        <ShotVeil />
+      </div>
     </div>
   );
 }
@@ -80,23 +89,26 @@ export function ProjectShot({
 
   if (shot.tall) {
     return (
-      <div className={`relative ${className}`}>
+      <div className={`project-media project-media--inset relative ${className}`}>
         {expandBtn}
-        <div
-          className="absolute inset-0 overflow-y-auto overscroll-contain bg-ink/5"
-          data-lenis-prevent
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={shot.src}
-            alt={shot.alt}
-            className={`block w-full ${onExpand ? "cursor-zoom-in" : ""}`}
-            onClick={onExpand}
-          />
+        <div className="project-media__frame absolute inset-[0.7rem]">
+          <div
+            className="absolute inset-0 overflow-y-auto overscroll-contain bg-ink-soft"
+            data-lenis-prevent
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={shot.src}
+              alt={shot.alt}
+              className={`project-media__img block w-full ${onExpand ? "cursor-zoom-in" : ""}`}
+              onClick={onExpand}
+            />
+          </div>
+          <ShotVeil />
+          <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/70 via-ink/30 to-transparent px-4 pt-10 pb-3 text-center font-mono text-[0.65rem] tracking-wide text-white/85">
+            Scroll preview · click for full view
+          </p>
         </div>
-        <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/65 via-ink/25 to-transparent px-4 pt-8 pb-3 text-center font-mono text-[0.65rem] tracking-wide text-white/85">
-          Scroll preview · click for full view
-        </p>
       </div>
     );
   }
@@ -106,16 +118,19 @@ export function ProjectShot({
       type="button"
       onClick={onExpand}
       disabled={!onExpand}
-      className={`group relative overflow-hidden bg-ink/5 text-left ${onExpand ? "cursor-zoom-in" : ""} ${className}`}
+      className={`project-media project-media--inset group relative text-left ${onExpand ? "cursor-zoom-in" : ""} ${className}`}
       aria-label={onExpand ? "Open full view" : undefined}
     >
       {expandBtn}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={shot.src}
-        alt={shot.alt}
-        className="absolute inset-0 size-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
-      />
+      <div className="project-media__frame absolute inset-[0.7rem]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={shot.src}
+          alt={shot.alt}
+          className="project-media__img absolute inset-0 size-full object-cover transition duration-300 group-hover:scale-[1.02]"
+        />
+        <ShotVeil />
+      </div>
     </button>
   );
 }
@@ -140,13 +155,18 @@ export function ProjectShotThumb({
   }
 
   return (
-    <div className={`relative overflow-hidden bg-ink/5 ${className}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={shot.src}
-        alt=""
-        className="absolute inset-0 size-full object-cover object-top"
-      />
+    <div
+      className={`project-media project-media--thumb project-media--inset-sm ${className}`}
+    >
+      <div className="project-media__frame absolute inset-[0.35rem]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={shot.src}
+          alt=""
+          className="project-media__img absolute inset-0 size-full object-cover"
+        />
+        <ShotVeil />
+      </div>
     </div>
   );
 }

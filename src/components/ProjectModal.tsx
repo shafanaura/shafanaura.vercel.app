@@ -12,6 +12,7 @@ import {
   ProjectShot,
   ProjectShotThumb,
 } from "@/components/ProjectMedia";
+import { TechChip, TechIcon } from "@/components/TechIcon";
 import { EASE } from "@/lib/constants";
 import { useSite } from "@/providers/LumoraProvider";
 
@@ -110,8 +111,8 @@ export function ProjectModal() {
             onExpand={canExpand ? () => setLightbox(true) : undefined}
             className={
               isTall
-                ? "h-[min(58vh,28rem)] w-full shrink-0"
-                : "aspect-[16/9] w-full"
+                ? "h-[min(58vh,28rem)] w-full shrink-0 border-b border-ink/15"
+                : "aspect-[16/10] w-full shrink-0 border-b border-ink/15"
             }
           />
 
@@ -192,7 +193,10 @@ export function ProjectModal() {
                     key={row.tech}
                     className="rounded-xl border border-line bg-background px-4 py-3"
                   >
-                    <p className="font-mono text-xs text-accent">{row.tech}</p>
+                    <p className="inline-flex items-center gap-1.5 font-mono text-xs text-accent">
+                      <TechIcon name={row.tech} size="0.9rem" />
+                      {row.tech}
+                    </p>
                     <p className="mt-1 text-sm text-muted">{row.reason}</p>
                   </li>
                 ))}
@@ -205,12 +209,7 @@ export function ProjectModal() {
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {activeProject.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-md bg-surface px-2.5 py-1 font-mono text-xs text-foreground/80"
-                  >
-                    {t}
-                  </span>
+                  <TechChip key={t} label={t} tone="plain" />
                 ))}
               </div>
             </div>
@@ -321,13 +320,15 @@ export function ProjectModal() {
             onClick={(e) => e.stopPropagation()}
             data-lenis-prevent
           >
-            <div className="mx-auto max-w-5xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={shot.src}
-                alt={shot.alt}
-                className="mx-auto w-full rounded-lg shadow-2xl"
-              />
+            <div className="project-media project-media--lightbox mx-auto max-w-5xl rounded-xl p-2 sm:p-3">
+              <div className="project-media__frame relative overflow-hidden rounded-lg shadow-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={shot.src}
+                  alt={shot.alt}
+                  className="project-media__img mx-auto w-full"
+                />
+              </div>
             </div>
           </div>
         </div>

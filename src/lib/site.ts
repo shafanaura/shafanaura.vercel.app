@@ -12,7 +12,7 @@ export const SITE = {
   role: "Fullstack Developer",
   location: "Remote · Asia / Worldwide",
   timezone: "UTC+7 (WIB)",
-  workingSince: 2019,
+  workingSince: 2021,
   email: "shafanaura48@gmail.com",
   resumeUrl: "#resume", // replace with real PDF path later
   avatar: "/avatar.jpg",
@@ -211,7 +211,13 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://backwatertrip.com",
     status: "live",
     cover: ["#0c1f2e", "#1a9b7a"],
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/backwater-trip.png",
+        alt: "BackwaterTrip houseboat booking interface",
+        caption: "Search & listings",
+      },
+    ],
   },
   {
     id: "dosimetry-badge",
@@ -318,6 +324,7 @@ export const EXPERIENCE = [
       "Building fullstack JavaScript products for an IT services & consulting team",
       "Owning features across the stack — UI, APIs, and delivery",
     ],
+    stack: ["React", "Next.js", "TypeScript", "Node", "Express.js"],
   },
   {
     company: "Self-employed",
@@ -329,6 +336,7 @@ export const EXPERIENCE = [
       "Shipped React, Next.js, and Vite apps across green energy, education, AI, and travel",
       "Owned frontend and fullstack delivery end to end — UI, APIs, and handoff",
     ],
+    stack: ["React", "Next.js", "Vite", "TypeScript", "React Query"],
   },
   {
     company: "PT Neural Technologies Indonesia",
@@ -340,6 +348,7 @@ export const EXPERIENCE = [
       "Built data visualizations with ECharts and Mapbox",
       "Improved performance and UX from real user feedback",
     ],
+    stack: ["React", "JavaScript", "ECharts", "Mapbox"],
   },
   {
     company: "Remote Work",
@@ -351,6 +360,7 @@ export const EXPERIENCE = [
       "Shipped an online cashier app for cafes — employees, menus, and income tracking",
       "Owned design and prototyping in Framer, not only implementation",
     ],
+    stack: ["React", "JavaScript", "Framer"],
   },
 ] as const;
 
@@ -468,21 +478,25 @@ export const SKILLS = [
     index: "01",
     title: "Product UI",
     description: "Next.js / React for search, booking, dashboards, and marketing surfaces.",
+    tech: ["Next.js", "React", "TypeScript"],
   },
   {
     index: "02",
     title: "APIs & services",
     description: "NestJS + TypeScript modules for auth, bookings, and domain logic.",
+    tech: ["NestJS", "TypeScript", "Node"],
   },
   {
     index: "03",
     title: "Data layer",
     description: "PostgreSQL as source of truth; Redis for cache, sessions, and queues.",
+    tech: ["PostgreSQL", "Redis"],
   },
   {
     index: "04",
     title: "Migrations & systems",
     description: "No-code → Next rebuilds, design systems, and end-to-end delivery.",
+    tech: ["Next.js", "React Query", "Tailwind CSS"],
   },
 ] as const;
 
@@ -509,7 +523,8 @@ export const ABOUT = {
   statementLead: "I care about the whole product loop — ",
   statementMuted:
     "UI, APIs, and data layers that hold up in production, not just look good in a demo.",
-  distributed: "Remote-friendly. Clear async. Full ownership.",
+  distributed:
+    "Remote fullstack from Asia (UTC+7). Async by default — I own the feature through ship.",
   findOnline: "Elsewhere",
 } as const;
 

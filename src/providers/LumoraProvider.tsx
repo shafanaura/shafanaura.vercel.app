@@ -82,9 +82,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
           node.closest("[data-lenis-prevent]") ||
             node.closest("[data-lenis-prevent-wheel]"),
         ),
-      virtualScroll: () => {
-        if (middleAutoscroll) return false;
-      },
+      virtualScroll: () => !middleAutoscroll,
     });
     lenisRef.current = lenis;
 
@@ -92,7 +90,8 @@ export function SiteProvider({ children }: { children: ReactNode }) {
       if (e.button === 1) {
         middleDownAt = performance.now();
         middleAutoscroll = true;
-        lenis.reset();
+        // Stop inertia via public API (reset() is private in Lenis 1.3.x)
+        lenis.scrollTo(lenis.scroll, { immediate: true });
         return;
       }
       // Any other click exits browser middle-click autoscroll mode
@@ -135,10 +134,12 @@ export function SiteProvider({ children }: { children: ReactNode }) {
 
   const stopScroll = useCallback(() => {
     lockCount.current += 1;
+    if (lockCount.current > 1) return;
     lenisRef.current?.stop();
     const html = document.documentElement;
     html.style.position = "relative";
-    html.style.overflow = "hidden";
+    // Only lock Y — leave overflow-x alone so clip / middle-click behavior stays intact
+    html.style.overflowY = "hidden";
     html.style.height = "100%";
   }, []);
 
@@ -149,6 +150,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     const html = document.documentElement;
     html.style.removeProperty("position");
     html.style.removeProperty("overflow");
+    html.style.removeProperty("overflow-y");
     html.style.removeProperty("height");
   }, []);
 

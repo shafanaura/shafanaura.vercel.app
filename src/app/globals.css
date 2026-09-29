@@ -48,6 +48,9 @@
   html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    /* Keep a usable vertical scrollbar (native mouse drag / broken-wheel fallback) */
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
   }
 
   @media (max-width: 1920px) {
@@ -75,8 +78,48 @@
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-    /* clip (not hidden) — overflow-x:hidden on body breaks middle-click autoscroll */
+    /* clip (not hidden) — overflow-x:hidden on body breaks middle-click autoscroll.
+       Keep overflow-y visible so html owns the document Y scrollbar (clip+visible is valid). */
     overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  /* Signal Lab scrollbars — document + nested overflow areas (modals, lightbox) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--ink) 42%, var(--subtle)) var(--surface);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--surface);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--ink) 40%, var(--subtle));
+    border-radius: 999px;
+    border: 2px solid var(--surface);
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--accent) 70%, var(--ink));
+    border: 2px solid var(--surface);
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background: var(--accent-deep);
+    border: 2px solid var(--surface);
+    background-clip: padding-box;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: var(--surface);
   }
 
   a {
@@ -273,6 +316,90 @@
   display: flex;
   width: max-content;
   animation: marquee 32s linear infinite;
+}
+
+/* Project screenshots — framed matte so production UIs sit with Signal Lab */
+.project-media {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 50% 0%,
+      rgba(18, 184, 134, 0.07),
+      transparent 55%
+    ),
+    var(--ink);
+}
+
+.project-media--inset {
+  padding: 0.7rem;
+}
+
+.project-media--inset-sm {
+  padding: 0.35rem;
+}
+
+.project-media__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(var(--radius-control) + 0.1rem);
+  height: 100%;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 12px 28px -18px rgba(0, 0, 0, 0.55);
+}
+
+/* Portfolio card cover — square the edge that meets the content panel */
+.project-media--card .project-media__frame {
+  border-radius: calc(var(--radius-control) + 0.1rem)
+    calc(var(--radius-control) + 0.1rem) 0 0;
+}
+
+@media (min-width: 768px) {
+  .project-media--card .project-media__frame {
+    border-radius: calc(var(--radius-control) + 0.1rem) 0 0
+      calc(var(--radius-control) + 0.1rem);
+  }
+}
+
+.project-media__img {
+  /* Bias crop right so dark UI chrome / letterbox voids stay out of the visible frame */
+  object-position: 65% 0;
+  filter: saturate(0.78) brightness(0.96) contrast(1.04);
+}
+
+.project-media__veil {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 16, 32, 0.12) 0%,
+      transparent 28%,
+      transparent 62%,
+      rgba(11, 16, 32, 0.22) 100%
+    ),
+    radial-gradient(
+      ellipse 85% 75% at 50% 40%,
+      transparent 45%,
+      rgba(11, 16, 32, 0.18) 100%
+    );
+  box-shadow: inset 0 0 0 1px rgba(62, 224, 176, 0.1);
+}
+
+.project-media--thumb .project-media__img {
+  filter: saturate(0.82) brightness(0.97) contrast(1.02);
+}
+
+.project-media--lightbox .project-media__img {
+  filter: none;
+}
+
+.project-media--lightbox .project-media__veil {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
