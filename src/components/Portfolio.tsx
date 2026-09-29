@@ -1,13 +1,9 @@
 "use client";
 
 import { ArrowUpRight } from "@/components/icons";
+import { ProjectCover } from "@/components/ProjectMedia";
 import { LineReveal, Reveal } from "@/components/ui/motion";
-import {
-  AbstractCover,
-  Eyebrow,
-  Shell,
-  TagChip,
-} from "@/components/ui/primitives";
+import { Eyebrow, Shell, TagChip } from "@/components/ui/primitives";
 import { PROJECTS, type Project } from "@/lib/site";
 import { useSite } from "@/providers/LumoraProvider";
 
@@ -25,9 +21,8 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         onClick={() => openProject(project)}
         className="group grid w-full grid-cols-1 items-stretch gap-0 overflow-hidden rounded-2xl border border-line bg-white text-left transition duration-400 hover:border-accent/40 hover:shadow-[0_20px_50px_-30px_rgba(11,16,32,0.35)] md:grid-cols-12"
       >
-        <AbstractCover
-          from={project.cover[0]}
-          to={project.cover[1]}
+        <ProjectCover
+          project={project}
           label={project.status === "archived" ? "archived" : project.id}
           className="min-h-44 md:col-span-4 md:min-h-full"
         />
@@ -86,9 +81,8 @@ export function Portfolio() {
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />
           </div>
-          <p className="max-w-xs text-sm text-muted">
-            Real client products. Screenshots will replace abstract covers as I
-            finish collecting assets.
+          <p className="max-w-xs text-sm text-muted sm:shrink-0 sm:text-right">
+            Real client products with production screenshots.
           </p>
         </div>
 

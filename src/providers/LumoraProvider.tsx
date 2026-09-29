@@ -69,6 +69,10 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     const onResize = () => applyAdaptiveGrid();
     window.addEventListener("resize", onResize);
 
+    /** Middle-click autoscroll — let the browser own scroll until it ends. */
+    let middleAutoscroll = false;
+    let middleDownAt = 0;
+
     const lenis = new Lenis({
       smoothWheel: true,
       // Allow native wheel scroll inside modals / nested overflow areas
@@ -78,8 +82,39 @@ export function SiteProvider({ children }: { children: ReactNode }) {
           node.closest("[data-lenis-prevent]") ||
             node.closest("[data-lenis-prevent-wheel]"),
         ),
+      virtualScroll: () => {
+        if (middleAutoscroll) return false;
+      },
     });
     lenisRef.current = lenis;
+
+    const onPointerDown = (e: PointerEvent) => {
+      if (e.button === 1) {
+        middleDownAt = performance.now();
+        middleAutoscroll = true;
+        lenis.reset();
+        return;
+      }
+      // Any other click exits browser middle-click autoscroll mode
+      if (middleAutoscroll) middleAutoscroll = false;
+    };
+
+    const onPointerUp = (e: PointerEvent) => {
+      if (e.button !== 1) return;
+      // Hold-and-drag: release ends it. Short click: keep native until next click.
+      if (performance.now() - middleDownAt > 180) {
+        middleAutoscroll = false;
+      }
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") middleAutoscroll = false;
+    };
+
+    window.addEventListener("pointerdown", onPointerDown, true);
+    window.addEventListener("pointerup", onPointerUp, true);
+    window.addEventListener("keydown", onKeyDown);
+
     let raf = 0;
     const loop = (t: number) => {
       lenis.raf(t);
@@ -89,6 +124,9 @@ export function SiteProvider({ children }: { children: ReactNode }) {
 
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("pointerdown", onPointerDown, true);
+      window.removeEventListener("pointerup", onPointerUp, true);
+      window.removeEventListener("keydown", onKeyDown);
       cancelAnimationFrame(raf);
       lenis.destroy();
       lenisRef.current = null;

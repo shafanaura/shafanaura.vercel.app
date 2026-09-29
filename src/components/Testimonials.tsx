@@ -37,7 +37,7 @@ export function Testimonials() {
         <ul className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal
-              key={t.name}
+              key={`${t.source}-${t.role}-${i}`}
               as="li"
               delay={i * 70}
               from={{ opacity: 0, transform: "translateY(20px)" }}

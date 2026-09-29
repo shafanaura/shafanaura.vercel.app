@@ -15,6 +15,7 @@ export const SITE = {
   workingSince: 2019,
   email: "shafanaura48@gmail.com",
   resumeUrl: "#resume", // replace with real PDF path later
+  avatar: "/avatar.jpg",
   social: {
     github: "https://github.com/shafanaura",
     linkedin: "https://www.linkedin.com/in/shafanaura",
@@ -50,6 +51,8 @@ export type ProjectScreenshot = {
   src?: string;
   alt: string;
   caption?: string;
+  /** Full-page capture — crop to top on cards; scroll inside modal. */
+  tall?: boolean;
   tone?: [string, string];
 };
 
@@ -67,7 +70,6 @@ export type Project = {
   whyStack: { tech: string; reason: string }[];
   liveUrl?: string;
   liveLabel?: string;
-  galleryUrl?: string;
   status?: "live" | "archived";
   cover: [string, string];
   screenshots: ProjectScreenshot[];
@@ -113,14 +115,19 @@ export const PROJECTS: Project[] = [
     cover: ["#1c1410", "#e8a87c"],
     screenshots: [
       {
-        alt: "Club browsing",
+        src: "/projects/yeki-1.png",
+        alt: "Yeki club browsing interface",
         caption: "Browse clubs",
-        tone: ["#1c1410", "#e8a87c"],
       },
       {
-        alt: "Enrollment flow",
+        src: "/projects/yeki-2.png",
+        alt: "Yeki enrollment and scheduling",
         caption: "Enrollment",
-        tone: ["#0b1020", "#12b886"],
+      },
+      {
+        src: "/projects/yeki-3.png",
+        alt: "Yeki session detail",
+        caption: "Sessions",
       },
     ],
   },
@@ -154,19 +161,14 @@ export const PROJECTS: Project[] = [
       },
     ],
     liveUrl: "https://energinno.co.kr/ko/landing",
-    galleryUrl: "https://photos.app.goo.gl/Hh7CTePBUJY31uVe9",
     status: "live",
     cover: ["#0e1a14", "#3ee0b0"],
     screenshots: [
       {
-        alt: "Landing hero",
-        caption: "Landing",
-        tone: ["#0e1a14", "#3ee0b0"],
-      },
-      {
-        alt: "Solution sections",
-        caption: "Product story",
-        tone: ["#0b1020", "#6b8cff"],
+        src: "/projects/energinno.png",
+        alt: "Energinno full landing page",
+        caption: "Landing page",
+        tall: true,
       },
     ],
   },
@@ -209,18 +211,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://backwatertrip.com",
     status: "live",
     cover: ["#0c1f2e", "#1a9b7a"],
-    screenshots: [
-      {
-        alt: "Search and package results",
-        caption: "Search & listings",
-        tone: ["#0c1f2e", "#1a9b7a"],
-      },
-      {
-        alt: "Package detail",
-        caption: "Package detail",
-        tone: ["#102a3a", "#6b8cff"],
-      },
-    ],
+    screenshots: [],
   },
   {
     id: "dosimetry-badge",
@@ -253,19 +244,14 @@ export const PROJECTS: Project[] = [
       },
     ],
     liveUrl: "https://dosimetrybadge.com",
-    galleryUrl: "https://photos.app.goo.gl/sZ9GHSvWtGr3CXLz5",
     status: "live",
     cover: ["#1a1520", "#5b7cfa"],
     screenshots: [
       {
-        alt: "Product catalog",
-        caption: "Catalog",
-        tone: ["#1a1520", "#5b7cfa"],
-      },
-      {
-        alt: "Subscription plans",
-        caption: "Pricing plans",
-        tone: ["#12141c", "#12b886"],
+        src: "/projects/dosimetry-badge.png",
+        alt: "Dosimetry Badge full storefront page",
+        caption: "Storefront",
+        tall: true,
       },
     ],
   },
@@ -299,19 +285,14 @@ export const PROJECTS: Project[] = [
       },
     ],
     liveUrl: "https://residencyprograms.io",
-    galleryUrl: "https://photos.app.goo.gl/sGRTjvDJ8d1MYHAo7",
     status: "live",
     cover: ["#0f1728", "#3ee0b0"],
     screenshots: [
       {
-        alt: "Program explorer",
-        caption: "Explore programs",
-        tone: ["#0f1728", "#3ee0b0"],
-      },
-      {
-        alt: "Filter panel",
-        caption: "Filters & matching",
-        tone: ["#12203a", "#6b8cff"],
+        src: "/projects/residency-programs.png",
+        alt: "Residency Programs explorer full page",
+        caption: "Program explorer",
+        tall: true,
       },
     ],
   },
@@ -320,14 +301,24 @@ export const PROJECTS: Project[] = [
 export const NOW = {
   eyebrow: "Now",
   items: [
-    "Collecting deeper case studies and screenshots for this portfolio",
     "Open for freelance on Upwork and direct — Next.js + NestJS fullstack product work",
     "Exploring stronger design-system and DX patterns across client stacks",
+    "Shipping case studies with real product screenshots on this site",
   ],
   updated: "Sep 2026",
 } as const;
 
 export const EXPERIENCE = [
+  {
+    company: "RSYS",
+    role: "Fullstack JavaScript Developer",
+    period: "Feb 2025 — Present",
+    location: "Remote · Office in Bogor, Indonesia",
+    highlights: [
+      "Building fullstack JavaScript products for an IT services & consulting team",
+      "Owning features across the stack — UI, APIs, and delivery",
+    ],
+  },
   {
     company: "Self-employed",
     role: "Fullstack JavaScript Developer",
@@ -343,11 +334,22 @@ export const EXPERIENCE = [
     company: "PT Neural Technologies Indonesia",
     role: "Frontend Developer",
     period: "May 2021 — Jan 2023",
-    location: "Jakarta Selatan, Indonesia",
+    location: "Remote · Office in Jakarta Selatan, Indonesia",
     highlights: [
       "Led Telkomsel’s provider comparison dashboard in React.js",
       "Built data visualizations with ECharts and Mapbox",
       "Improved performance and UX from real user feedback",
+    ],
+  },
+  {
+    company: "Remote Work",
+    role: "Frontend Web & Mobile Developer",
+    period: "Jun 2020 — Jul 2020",
+    location: "Jawa Timur, Indonesia",
+    highlights: [
+      "Built a seller store-management web app integrating Shopee, Tokopedia, and Tokoku",
+      "Shipped an online cashier app for cafes — employees, menus, and income tracking",
+      "Owned design and prototyping in Framer, not only implementation",
     ],
   },
 ] as const;

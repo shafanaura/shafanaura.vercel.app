@@ -54,10 +54,24 @@ export function About() {
             from={{ opacity: 0, transform: "translateY(16px)" }}
           >
             <div className="rounded-2xl border border-line bg-surface p-6">
-              <p className="font-mono text-[0.65rem] tracking-[0.16em] text-muted uppercase">
-                Signal
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+              <div className="flex items-center gap-3">
+                <img
+                  src={SITE.avatar}
+                  alt={SITE.name}
+                  width={48}
+                  height={48}
+                  className="size-12 shrink-0 rounded-xl object-cover ring-1 ring-line"
+                />
+                <div>
+                  <p className="font-mono text-[0.65rem] tracking-[0.16em] text-muted uppercase">
+                    Signal
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-foreground">
+                    {SITE.name}
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
                 {ABOUT.distributed}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">

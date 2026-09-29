@@ -42,9 +42,18 @@ export function Hero() {
                 {HERO.eyebrow}
               </p>
 
-              <p className="mb-4 font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
-                {HERO.brandLine}
-              </p>
+              <div className="mb-4 flex items-center gap-3">
+                <img
+                  src={SITE.avatar}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="size-10 rounded-full object-cover ring-2 ring-white/25"
+                />
+                <p className="font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
+                  {HERO.brandLine}
+                </p>
+              </div>
 
               <h1 className="max-w-[16ch] font-display text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 {HERO.headline}

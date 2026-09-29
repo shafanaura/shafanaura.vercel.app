@@ -20,7 +20,7 @@ export function Experience() {
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />
           </div>
-          <p className="max-w-xs text-sm text-muted">
+          <p className="max-w-xs text-sm text-muted sm:shrink-0 sm:text-right">
             From agency product work to Top-Rated freelance.{" "}
             <a
               href={SITE.social.linkedin}

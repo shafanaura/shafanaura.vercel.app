@@ -6,7 +6,10 @@ import {
   CloseIcon,
   ExternalLinkIcon,
 } from "@/components/icons";
-import { AbstractCover } from "@/components/ui/primitives";
+import {
+  ProjectShot,
+  ProjectShotThumb,
+} from "@/components/ProjectMedia";
 import { EASE } from "@/lib/constants";
 import { useSite } from "@/providers/LumoraProvider";
 
@@ -48,7 +51,7 @@ export function ProjectModal() {
 
   const shots = activeProject.screenshots;
   const shot = shots[activeShot];
-  const tone = shot?.tone ?? activeProject.cover;
+  const isTall = Boolean(shot?.tall && shot?.src);
 
   return (
     <div
@@ -88,11 +91,14 @@ export function ProjectModal() {
           className="min-h-0 flex-1 overflow-y-auto overscroll-contain"
           data-lenis-prevent
         >
-          <AbstractCover
-            from={tone[0]}
-            to={tone[1]}
-            label={shot?.caption ?? activeProject.name}
-            className="aspect-[16/9] w-full"
+          <ProjectShot
+            shot={shot}
+            fallback={activeProject.cover}
+            className={
+              isTall
+                ? "h-[min(58vh,28rem)] w-full shrink-0"
+                : "aspect-[16/9] w-full"
+            }
           />
 
           {shots.length > 1 && (
@@ -109,9 +115,9 @@ export function ProjectModal() {
                   }`}
                   aria-label={`View ${s.caption ?? i + 1}`}
                 >
-                  <AbstractCover
-                    from={(s.tone ?? activeProject.cover)[0]}
-                    to={(s.tone ?? activeProject.cover)[1]}
+                  <ProjectShotThumb
+                    shot={s}
+                    fallback={activeProject.cover}
                     className="h-full w-full"
                   />
                 </button>
@@ -204,17 +210,6 @@ export function ProjectModal() {
                   className="inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-sm font-semibold text-accent-bright"
                 >
                   {activeProject.liveLabel ?? "Live site"}
-                  <ExternalLinkIcon size="1rem" />
-                </a>
-              )}
-              {activeProject.galleryUrl && (
-                <a
-                  href={activeProject.galleryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold"
-                >
-                  Screenshots
                   <ExternalLinkIcon size="1rem" />
                 </a>
               )}

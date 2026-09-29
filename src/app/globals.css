@@ -75,7 +75,8 @@
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-    overflow-x: hidden;
+    /* clip (not hidden) — overflow-x:hidden on body breaks middle-click autoscroll */
+    overflow-x: clip;
   }
 
   a {
