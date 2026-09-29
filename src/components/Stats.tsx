@@ -59,7 +59,7 @@ export function Stats() {
             <Eyebrow tone="light">Proof</Eyebrow>
             <LineReveal
               as="h2"
-              lines={["Outcomes from shipped work."]}
+              lines={["A few numbers from the journey."]}
               delay={100}
               className="mt-4 max-w-[16ch] font-display text-3xl font-bold tracking-tight md:text-4xl"
             />

@@ -76,59 +76,6 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    id: "backwater-trip",
-    name: "BackwaterTrip",
-    category: "Travel · Booking",
-    year: "2024–2025",
-    summary:
-      "Houseboat booking for Kerala’s backwaters — search, compare, and enquire in real time.",
-    description:
-      "BackwaterTrip is a booking platform for houseboat trips through the Backwaters of Kerala, India. Travelers search, compare, and enquire about packages by room count and trip type (family, romantic, and more), with real-time check-in / check-out and guest search.",
-    role: "Frontend Developer",
-    tech: ["Next.js", "React Query", "Chakra UI"],
-    tags: ["Next.js", "Booking", "SEO"],
-    achievements: [
-      "Dynamic search (check-in, check-out, guests) with real-time filtering",
-      "Scalable package listing + detail pages for new trip categories",
-      "Enquiry form to streamline lead capture for the client",
-      "SSR/SSG for SEO and performance on organic tourism traffic",
-      "Fully responsive UI across devices",
-    ],
-    whyStack: [
-      {
-        tech: "Next.js",
-        reason:
-          "Tourism lives on organic search — SSR/SSG keeps pages fast and crawlable.",
-      },
-      {
-        tech: "React Query",
-        reason:
-          "Package search and listings change often; caching keeps filters snappy without refetch noise.",
-      },
-      {
-        tech: "Chakra UI",
-        reason:
-          "Accessible primitives let us ship a clean booking UI without reinventing form patterns.",
-      },
-    ],
-    liveUrl: "https://backwatertrip.com",
-    impact: "Helped convert visitors into 127+ completed trips",
-    status: "live",
-    cover: ["#0c1f2e", "#1a9b7a"],
-    screenshots: [
-      {
-        alt: "Search and package results",
-        caption: "Search & listings",
-        tone: ["#0c1f2e", "#1a9b7a"],
-      },
-      {
-        alt: "Package detail",
-        caption: "Package detail",
-        tone: ["#102a3a", "#6b8cff"],
-      },
-    ],
-  },
-  {
     id: "yeki",
     name: "Yeki",
     category: "EdTech · Booking",
@@ -226,6 +173,58 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "backwater-trip",
+    name: "BackwaterTrip",
+    category: "Travel · Booking",
+    year: "2024–2025",
+    summary:
+      "Houseboat booking for Kerala’s backwaters — search, compare, and enquire in real time.",
+    description:
+      "BackwaterTrip is a booking platform for houseboat trips through the Backwaters of Kerala, India. Travelers search, compare, and enquire about packages by room count and trip type (family, romantic, and more), with real-time check-in / check-out and guest search.",
+    role: "Frontend Developer",
+    tech: ["Next.js", "React Query", "Chakra UI"],
+    tags: ["Next.js", "Booking", "SEO"],
+    achievements: [
+      "Dynamic search (check-in, check-out, guests) with real-time filtering",
+      "Scalable package listing + detail pages for new trip categories",
+      "Enquiry form to streamline lead capture for the client",
+      "SSR/SSG for SEO and performance on organic tourism traffic",
+      "Fully responsive UI across devices",
+    ],
+    whyStack: [
+      {
+        tech: "Next.js",
+        reason:
+          "Tourism lives on organic search — SSR/SSG keeps pages fast and crawlable.",
+      },
+      {
+        tech: "React Query",
+        reason:
+          "Package search and listings change often; caching keeps filters snappy without refetch noise.",
+      },
+      {
+        tech: "Chakra UI",
+        reason:
+          "Accessible primitives let us ship a clean booking UI without reinventing form patterns.",
+      },
+    ],
+    liveUrl: "https://backwatertrip.com",
+    status: "live",
+    cover: ["#0c1f2e", "#1a9b7a"],
+    screenshots: [
+      {
+        alt: "Search and package results",
+        caption: "Search & listings",
+        tone: ["#0c1f2e", "#1a9b7a"],
+      },
+      {
+        alt: "Package detail",
+        caption: "Package detail",
+        tone: ["#102a3a", "#6b8cff"],
+      },
+    ],
+  },
+  {
     id: "dosimetry-badge",
     name: "Dosimetry Badge",
     category: "E-commerce · Health",
@@ -303,7 +302,6 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: "https://residencyprograms.io",
     galleryUrl: "https://photos.app.goo.gl/sGRTjvDJ8d1MYHAo7",
-    impact: "Helped 1,400+ students save research time",
     status: "live",
     cover: ["#0f1728", "#3ee0b0"],
     screenshots: [
@@ -463,12 +461,12 @@ export const SKILLS = [
   },
 ] as const;
 
-/** Outcomes tied to shipped work — not vanity fluff. */
+/** Outcomes — keep general; avoid single-client vanity metrics. */
 export const STATS = [
-  { value: 5, suffix: "", label: "Featured products here" },
-  { value: 127, suffix: "+", label: "Trips enabled (BackwaterTrip)" },
-  { value: 1400, suffix: "+", label: "Students helped (Residency)" },
-  { value: 6, suffix: "+", label: "Years shipping" },
+  { value: 20, suffix: "+", label: "Products shipped" },
+  { value: 5, suffix: "+", label: "Years shipping" },
+  { value: 8, suffix: "+", label: "Core tools in daily use" },
+  { value: 3, suffix: "", label: "Upwork recommendations" },
 ] as const;
 
 export const NAV_ITEMS = [
