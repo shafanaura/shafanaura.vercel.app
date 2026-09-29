@@ -57,13 +57,15 @@ export function ContactModal() {
       onClick={closeRequest}
     >
       <div
-        className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-line sm:p-8"
+        className="relative max-h-[92dvh] w-full max-w-lg overflow-y-auto overscroll-contain rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-line sm:p-8"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(24px)",
           transition: `opacity 400ms ${EASE.spring200}, transform 400ms ${EASE.spring200}`,
         }}
         onClick={(e) => e.stopPropagation()}
+        onWheel={(e) => e.stopPropagation()}
+        data-lenis-prevent
       >
         <button
           type="button"

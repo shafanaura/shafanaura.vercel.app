@@ -72,6 +72,8 @@ export function ProjectModal() {
           transition: `opacity 400ms ${EASE.spring200}, transform 400ms ${EASE.spring200}`,
         }}
         onClick={(e) => e.stopPropagation()}
+        onWheel={(e) => e.stopPropagation()}
+        data-lenis-prevent
       >
         <button
           type="button"
@@ -82,7 +84,10 @@ export function ProjectModal() {
           <CloseIcon size="1rem" />
         </button>
 
-        <div className="overflow-y-auto">
+        <div
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain"
+          data-lenis-prevent
+        >
           <AbstractCover
             from={tone[0]}
             to={tone[1]}

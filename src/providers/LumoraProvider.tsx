@@ -69,7 +69,16 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     const onResize = () => applyAdaptiveGrid();
     window.addEventListener("resize", onResize);
 
-    const lenis = new Lenis({ smoothWheel: true });
+    const lenis = new Lenis({
+      smoothWheel: true,
+      // Allow native wheel scroll inside modals / nested overflow areas
+      prevent: (node) =>
+        node instanceof HTMLElement &&
+        Boolean(
+          node.closest("[data-lenis-prevent]") ||
+            node.closest("[data-lenis-prevent-wheel]"),
+        ),
+    });
     lenisRef.current = lenis;
     let raf = 0;
     const loop = (t: number) => {
