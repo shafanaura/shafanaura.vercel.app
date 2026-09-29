@@ -33,7 +33,10 @@ type TechKey =
   | "framer"
   | "express"
   | "echarts"
-  | "mapbox";
+  | "mapbox"
+  | "blazor"
+  | "dotnet"
+  | "csharp";
 
 const ALIASES: Record<string, TechKey> = {
   "next.js": "nextjs",
@@ -75,6 +78,14 @@ const ALIASES: Record<string, TechKey> = {
   "apache echarts": "echarts",
   mapbox: "mapbox",
   "mapbox gl": "mapbox",
+  blazor: "blazor",
+  ".net": "dotnet",
+  dotnet: "dotnet",
+  "asp.net": "dotnet",
+  "asp.net core": "dotnet",
+  "c#": "csharp",
+  csharp: "csharp",
+  "c sharp": "csharp",
 };
 
 /** Normalize a label and resolve to a known tech key when possible. */
@@ -314,6 +325,38 @@ function MapboxIcon(props: SvgProps) {
   );
 }
 
+function BlazorIcon(props: SvgProps) {
+  return (
+    <svg {...svgBase(props)} viewBox="0 0 24 24" fill="#512BD4">
+      <path d="M12 2.2 2.4 7.7v8.6L12 21.8l9.6-5.5V7.7L12 2.2Zm0 2.2 7.4 4.2v.5l-7.4 4.3-7.4-4.3v-.5L12 4.4Zm-7.4 6.1 6.6 3.8v5.5l-6.6-3.8v-5.5Zm8.2 9.3v-5.5l6.6-3.8v5.5l-6.6 3.8Z" />
+    </svg>
+  );
+}
+
+function DotNetIcon(props: SvgProps) {
+  return (
+    <svg {...svgBase(props)} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="4" fill="#512BD4" />
+      <path
+        fill="#fff"
+        d="M4.2 15.2V8.8h1.7c1.6 0 2.6.8 2.6 2.2 0 .9-.4 1.6-1.1 1.9l1.4 2.3H7.2l-1.2-2.1H5.9v2.1H4.2Zm1.7-3.5h.4c.6 0 1-.3 1-.9s-.4-.9-1-.9h-.4v1.8Zm5.2 3.5c-1.5 0-2.5-1.1-2.5-2.7S9.6 9.8 11.1 9.8c1.5 0 2.5 1.1 2.5 2.7s-1 2.7-2.5 2.7Zm0-1.4c.7 0 1.1-.6 1.1-1.3s-.4-1.3-1.1-1.3-1.1.6-1.1 1.3.4 1.3 1.1 1.3Zm3.8 1.4V8.8h1.6v5.1h2.6v1.3h-4.2Z"
+      />
+    </svg>
+  );
+}
+
+function CSharpIcon(props: SvgProps) {
+  return (
+    <svg {...svgBase(props)} viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="4" fill="#512BD4" />
+      <path
+        fill="#fff"
+        d="M8.2 16.4c-2.1 0-3.5-1.5-3.5-3.9S6.1 8.6 8.2 8.6c1.2 0 2.1.5 2.7 1.3l-1.2.9c-.3-.4-.8-.7-1.4-.7-1.1 0-1.9.9-1.9 2.4s.8 2.4 1.9 2.4c.6 0 1.1-.3 1.4-.7l1.2.9c-.6.8-1.5 1.3-2.7 1.3Zm7.4-.2-1-.9c.4-.5.6-1.1.6-1.8s-.2-1.3-.6-1.8l1-.9c.6.7.9 1.6.9 2.7s-.3 2-.9 2.7Zm2.6 0-1-.9c.4-.5.6-1.1.6-1.8s-.2-1.3-.6-1.8l1-.9c.6.7.9 1.6.9 2.7s-.3 2-.9 2.7Zm-3.4-4.6h1.3v1.1h-1.3v1.3h-1.1v-1.3H12v-1.1h1.3V10.3h1.1v1.3Z"
+      />
+    </svg>
+  );
+}
+
 const ICONS: Record<TechKey, (props: SvgProps) => ReactNode> = {
   nextjs: NextJsIcon,
   nestjs: NestJsIcon,
@@ -333,6 +376,9 @@ const ICONS: Record<TechKey, (props: SvgProps) => ReactNode> = {
   express: ExpressIcon,
   echarts: EChartsIcon,
   mapbox: MapboxIcon,
+  blazor: BlazorIcon,
+  dotnet: DotNetIcon,
+  csharp: CSharpIcon,
 };
 
 export function TechIcon({

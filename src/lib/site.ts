@@ -229,24 +229,24 @@ export const PROJECTS: Project[] = [
     description:
       "Dosimetry Badge serves dental clinics, hospitals, labs, and industrial facilities across the US. The platform handles product catalog, subscription-based pricing, and account management for ongoing radiation exposure monitoring.",
     role: "Fullstack Developer",
-    tech: ["TypeScript", "React", "Node", "Tailwind CSS"],
-    tags: ["Subscriptions", "E-commerce", "Fullstack"],
+    tech: ["Blazor", ".NET", "C#"],
+    tags: ["Blazor", "Subscriptions", "E-commerce"],
     achievements: [
-      "Shipped client-facing UI and supporting product logic for catalog and accounts",
+      "Shipped Blazor UI and .NET product logic for catalog and accounts",
       "Subscription and pricing flows (monthly, quarterly, annual)",
       "Account features: add/remove badges and wearer reassignment",
-      "Clean, fast interface with a consistent design system",
+      "Cohesive storefront and account experience on a shared C# stack",
     ],
     whyStack: [
       {
-        tech: "Component UI + Tailwind",
+        tech: "Blazor",
         reason:
-          "Needed a maintainable catalog and account UI that stayed consistent while pricing rules evolved.",
+          "Component-based UI for catalog, subscriptions, and account flows with strong .NET integration.",
       },
       {
-        tech: "Typed fullstack flow",
+        tech: ".NET + C#",
         reason:
-          "Subscription state and account mutations benefit from clear contracts between UI and server logic.",
+          "One language across UI and server for subscription state, pricing rules, and account mutations.",
       },
     ],
     liveUrl: "https://dosimetrybadge.com",

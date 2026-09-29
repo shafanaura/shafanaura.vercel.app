@@ -342,11 +342,16 @@
 .project-media__frame {
   position: relative;
   overflow: hidden;
-  border-radius: calc(var(--radius-control) + 0.1rem);
+  /* Modest radius so framed screenshots don’t leave large matte crescents */
+  border-radius: 0.375rem;
   height: 100%;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06),
     0 12px 28px -18px rgba(0, 0, 0, 0.55);
+}
+
+.project-media--thumb .project-media__frame {
+  border-radius: 0.25rem;
 }
 
 /* Portfolio card cover — square the edge that meets the content panel */
