@@ -21,15 +21,14 @@ export function Testimonials() {
             />
           </div>
           <p className="max-w-xs text-sm text-muted">
-            Quotes below are placeholders until I publish real client permission.
-            Meanwhile —{" "}
+            Real feedback from Upwork clients.{" "}
             <a
               href={SITE.social.upwork}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent underline-offset-2 hover:underline"
             >
-              see Upwork profile
+              See full profile
             </a>
             .
           </p>

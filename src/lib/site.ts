@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
     id: "backwater-trip",
     name: "BackwaterTrip",
     category: "Travel · Booking",
-    year: "2024",
+    year: "2024–2025",
     summary:
       "Houseboat booking for Kerala’s backwaters — search, compare, and enquire in real time.",
     description:
@@ -129,104 +129,10 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "dosimetry-badge",
-    name: "Dosimetry Badge",
-    category: "E-commerce · Health",
-    year: "2024",
-    summary:
-      "E-commerce for radiation dosimeter badges — catalog, subscriptions, and account management.",
-    description:
-      "Dosimetry Badge serves dental clinics, hospitals, labs, and industrial facilities across the US. The platform handles product catalog, subscription-based pricing, and account management for ongoing radiation exposure monitoring.",
-    role: "Fullstack Developer",
-    tech: ["TypeScript", "React", "Node", "Tailwind CSS"],
-    tags: ["Subscriptions", "E-commerce", "Fullstack"],
-    achievements: [
-      "Shipped client-facing UI and supporting product logic for catalog and accounts",
-      "Subscription and pricing flows (monthly, quarterly, annual)",
-      "Account features: add/remove badges and wearer reassignment",
-      "Clean, fast interface with a consistent design system",
-    ],
-    whyStack: [
-      {
-        tech: "Component UI + Tailwind",
-        reason:
-          "Needed a maintainable catalog and account UI that stayed consistent while pricing rules evolved.",
-      },
-      {
-        tech: "Typed fullstack flow",
-        reason:
-          "Subscription state and account mutations benefit from clear contracts between UI and server logic.",
-      },
-    ],
-    liveUrl: "https://dosimetrybadge.com",
-    galleryUrl: "https://photos.app.goo.gl/sZ9GHSvWtGr3CXLz5",
-    status: "live",
-    cover: ["#1a1520", "#5b7cfa"],
-    screenshots: [
-      {
-        alt: "Product catalog",
-        caption: "Catalog",
-        tone: ["#1a1520", "#5b7cfa"],
-      },
-      {
-        alt: "Subscription plans",
-        caption: "Pricing plans",
-        tone: ["#12141c", "#12b886"],
-      },
-    ],
-  },
-  {
-    id: "residency-programs",
-    name: "Residency Programs",
-    category: "EdTech · Data",
-    year: "2023",
-    summary:
-      "Data-driven matching for IMGs shortlisting US residency programs.",
-    description:
-      "ResidencyPrograms.io helps international medical graduates find and shortlist US residency programs using filters like state, USMLE step scores, visa requirements, and medical school connections.",
-    role: "Backend and Frontend Developer",
-    tech: ["Next.js", "React", "Chakra UI", "Tailwind CSS"],
-    tags: ["Next.js", "Filters", "Data UI"],
-    achievements: [
-      "Personalized matching UI with advanced filtering and sorting",
-      "Explore/search experience by specialty",
-      "Chakra + Tailwind for a consistent, fast design system",
-    ],
-    whyStack: [
-      {
-        tech: "Next.js + React",
-        reason:
-          "Heavy filter/sort UIs need client interactivity with solid routing and deployability.",
-      },
-      {
-        tech: "Chakra + Tailwind",
-        reason:
-          "Chakra for complex interactive pieces; Tailwind for layout speed — complementary, not competing.",
-      },
-    ],
-    liveUrl: "https://residencyprograms.io",
-    galleryUrl: "https://photos.app.goo.gl/sGRTjvDJ8d1MYHAo7",
-    impact: "Helped 1,400+ students save research time",
-    status: "live",
-    cover: ["#0f1728", "#3ee0b0"],
-    screenshots: [
-      {
-        alt: "Program explorer",
-        caption: "Explore programs",
-        tone: ["#0f1728", "#3ee0b0"],
-      },
-      {
-        alt: "Filter panel",
-        caption: "Filters & matching",
-        tone: ["#12203a", "#6b8cff"],
-      },
-    ],
-  },
-  {
     id: "yeki",
     name: "Yeki",
     category: "EdTech · Booking",
-    year: "2023",
+    year: "2024–2025",
     summary:
       "Kids’ learning club booking — migrated from Bubble.io to Next.js for performance.",
     description:
@@ -277,7 +183,7 @@ export const PROJECTS: Project[] = [
     id: "energinno",
     name: "Energinno",
     category: "Marketing · Climate",
-    year: "2024",
+    year: "2024–2025",
     summary:
       "Marketing site for zero-energy building (ZEB) solutions in Korea.",
     description:
@@ -316,6 +222,100 @@ export const PROJECTS: Project[] = [
         alt: "Solution sections",
         caption: "Product story",
         tone: ["#0b1020", "#6b8cff"],
+      },
+    ],
+  },
+  {
+    id: "dosimetry-badge",
+    name: "Dosimetry Badge",
+    category: "E-commerce · Health",
+    year: "2023–2024",
+    summary:
+      "E-commerce for radiation dosimeter badges — catalog, subscriptions, and account management.",
+    description:
+      "Dosimetry Badge serves dental clinics, hospitals, labs, and industrial facilities across the US. The platform handles product catalog, subscription-based pricing, and account management for ongoing radiation exposure monitoring.",
+    role: "Fullstack Developer",
+    tech: ["TypeScript", "React", "Node", "Tailwind CSS"],
+    tags: ["Subscriptions", "E-commerce", "Fullstack"],
+    achievements: [
+      "Shipped client-facing UI and supporting product logic for catalog and accounts",
+      "Subscription and pricing flows (monthly, quarterly, annual)",
+      "Account features: add/remove badges and wearer reassignment",
+      "Clean, fast interface with a consistent design system",
+    ],
+    whyStack: [
+      {
+        tech: "Component UI + Tailwind",
+        reason:
+          "Needed a maintainable catalog and account UI that stayed consistent while pricing rules evolved.",
+      },
+      {
+        tech: "Typed fullstack flow",
+        reason:
+          "Subscription state and account mutations benefit from clear contracts between UI and server logic.",
+      },
+    ],
+    liveUrl: "https://dosimetrybadge.com",
+    galleryUrl: "https://photos.app.goo.gl/sZ9GHSvWtGr3CXLz5",
+    status: "live",
+    cover: ["#1a1520", "#5b7cfa"],
+    screenshots: [
+      {
+        alt: "Product catalog",
+        caption: "Catalog",
+        tone: ["#1a1520", "#5b7cfa"],
+      },
+      {
+        alt: "Subscription plans",
+        caption: "Pricing plans",
+        tone: ["#12141c", "#12b886"],
+      },
+    ],
+  },
+  {
+    id: "residency-programs",
+    name: "Residency Programs",
+    category: "EdTech · Data",
+    year: "2022–2023",
+    summary:
+      "Data-driven matching for IMGs shortlisting US residency programs.",
+    description:
+      "ResidencyPrograms.io helps international medical graduates find and shortlist US residency programs using filters like state, USMLE step scores, visa requirements, and medical school connections.",
+    role: "Backend and Frontend Developer",
+    tech: ["Next.js", "React", "Chakra UI", "Tailwind CSS"],
+    tags: ["Next.js", "Filters", "Data UI"],
+    achievements: [
+      "Personalized matching UI with advanced filtering and sorting",
+      "Explore/search experience by specialty",
+      "Chakra + Tailwind for a consistent, fast design system",
+    ],
+    whyStack: [
+      {
+        tech: "Next.js + React",
+        reason:
+          "Heavy filter/sort UIs need client interactivity with solid routing and deployability.",
+      },
+      {
+        tech: "Chakra + Tailwind",
+        reason:
+          "Chakra for complex interactive pieces; Tailwind for layout speed — complementary, not competing.",
+      },
+    ],
+    liveUrl: "https://residencyprograms.io",
+    galleryUrl: "https://photos.app.goo.gl/sGRTjvDJ8d1MYHAo7",
+    impact: "Helped 1,400+ students save research time",
+    status: "live",
+    cover: ["#0f1728", "#3ee0b0"],
+    screenshots: [
+      {
+        alt: "Program explorer",
+        caption: "Explore programs",
+        tone: ["#0f1728", "#3ee0b0"],
+      },
+      {
+        alt: "Filter panel",
+        caption: "Filters & matching",
+        tone: ["#12203a", "#6b8cff"],
       },
     ],
   },
@@ -362,28 +362,27 @@ export const HOW_I_WORK = {
   ],
 } as const;
 
-/** Placeholder testimonials — replace with real client quotes. */
 export const TESTIMONIALS = [
   {
     quote:
-      "Shafa turned a messy booking flow into something our team could actually ship and iterate on. Communication was clear the whole way.",
-    name: "A. Rahman",
-    role: "Founder, travel startup",
-    source: "Upwork · placeholder",
+      "Shafa came on to work with me on a React/NextJS/NodeJS project. She had great ideas throughout the project, worked diligently on completing the tasks assigned, and communicated well with me regarding the project progress, hurdles, improvements. Her technical abilities are awesome and she is willing to learn new things needed for the project. Overall I have nothing but positive things to say about Shafa and will definitely work with her again in the future!",
+    name: "Upwork client",
+    role: "React / Next.js / Node.js project",
+    source: "Upwork",
   },
   {
     quote:
-      "Strong frontend judgment — knew when to push Next.js patterns and when to keep things simple for the business.",
-    name: "J. Park",
-    role: "Product lead",
-    source: "Direct · placeholder",
+      "Shafa was very professional in her communication and work ethic. She followed the tasks accurately and suggested improvements as she saw which resulted in a better final product. I will have no hesitation to work with Shafa again on future projects or recommend her to any project. Her willingness and dedication to learning means she will continue to grow into becoming an even greater developer. I highly highly recommend Shafa!",
+    name: "Upwork client",
+    role: "Long-term collaboration",
+    source: "Upwork",
   },
   {
     quote:
-      "Migrating off Bubble was the right call. Performance and custom features finally matched what we needed.",
-    name: "M. Sato",
-    role: "Ops, edtech",
-    source: "Upwork · placeholder",
+      "She was diligent, hardworking, and delivered quality results. Highly recommended!",
+    name: "Upwork client",
+    role: "Freelance engagement",
+    source: "Upwork",
   },
 ] as const;
 
@@ -438,10 +437,6 @@ export const FAQ = [
   {
     q: "Can you join an existing codebase?",
     a: "Yes. I start with a short audit (DX, risks, quick wins), then ship in thin vertical slices.",
-  },
-  {
-    q: "Are the testimonials final?",
-    a: "Not yet — marked as placeholders while I collect permission to publish real client quotes.",
   },
 ] as const;
 
