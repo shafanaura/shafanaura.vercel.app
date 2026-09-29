@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import {
+  ArrowLeft,
   ArrowRight,
   CloseIcon,
+  ExpandIcon,
   ExternalLinkIcon,
 } from "@/components/icons";
 import {
@@ -17,20 +19,30 @@ export function ProjectModal() {
   const { activeProject, closeProject } = useSite();
   const [visible, setVisible] = useState(false);
   const [activeShot, setActiveShot] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
 
   useEffect(() => {
     if (activeProject) {
       setActiveShot(0);
+      setLightbox(false);
       requestAnimationFrame(() => setVisible(true));
     } else {
       setVisible(false);
+      setLightbox(false);
     }
   }, [activeProject]);
 
   useEffect(() => {
     if (!activeProject) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeProject();
+      if (e.key === "Escape") {
+        if (lightbox) {
+          setLightbox(false);
+          return;
+        }
+        closeProject();
+        return;
+      }
       if (!activeProject.screenshots.length) return;
       if (e.key === "ArrowRight") {
         setActiveShot((i) => (i + 1) % activeProject.screenshots.length);
@@ -45,13 +57,14 @@ export function ProjectModal() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [activeProject, closeProject]);
+  }, [activeProject, closeProject, lightbox]);
 
   if (!activeProject) return null;
 
   const shots = activeProject.screenshots;
   const shot = shots[activeShot];
   const isTall = Boolean(shot?.tall && shot?.src);
+  const canExpand = Boolean(shot?.src);
 
   return (
     <div
@@ -94,6 +107,7 @@ export function ProjectModal() {
           <ProjectShot
             shot={shot}
             fallback={activeProject.cover}
+            onExpand={canExpand ? () => setLightbox(true) : undefined}
             className={
               isTall
                 ? "h-[min(58vh,28rem)] w-full shrink-0"
@@ -213,6 +227,16 @@ export function ProjectModal() {
                   <ExternalLinkIcon size="1rem" />
                 </a>
               )}
+              {canExpand && (
+                <button
+                  type="button"
+                  onClick={() => setLightbox(true)}
+                  className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold transition hover:border-accent/40"
+                >
+                  Full view
+                  <ExpandIcon size="0.9rem" />
+                </button>
+              )}
               <button
                 type="button"
                 onClick={closeProject}
@@ -225,6 +249,89 @@ export function ProjectModal() {
           </div>
         </div>
       </div>
+
+      {lightbox && shot?.src && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeProject.name} full view`}
+          className="fixed inset-0 z-[120] flex flex-col bg-ink/92 backdrop-blur-md"
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightbox(false);
+          }}
+          data-lenis-prevent
+        >
+          <div className="flex shrink-0 items-center justify-between gap-3 px-4 py-3 sm:px-6">
+            <div className="min-w-0">
+              <p className="truncate font-display text-sm font-semibold text-white">
+                {activeProject.name}
+                {shot.caption ? ` · ${shot.caption}` : ""}
+              </p>
+              <p className="font-mono text-[0.65rem] text-white/45">
+                Full page view · Esc to close
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              {shots.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    aria-label="Previous image"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveShot(
+                        (i) =>
+                          (i - 1 + shots.length) % shots.length,
+                      );
+                    }}
+                    className="grid size-9 place-items-center rounded-xl bg-white/10 text-white transition hover:bg-white/20"
+                  >
+                    <ArrowLeft size="1rem" />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next image"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveShot((i) => (i + 1) % shots.length);
+                    }}
+                    className="grid size-9 place-items-center rounded-xl bg-white/10 text-white transition hover:bg-white/20"
+                  >
+                    <ArrowRight size="1rem" />
+                  </button>
+                </>
+              )}
+              <button
+                type="button"
+                aria-label="Close full view"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightbox(false);
+                }}
+                className="grid size-9 place-items-center rounded-xl bg-white/10 text-white transition hover:bg-white/20"
+              >
+                <CloseIcon size="1rem" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 pb-6 sm:px-8"
+            onClick={(e) => e.stopPropagation()}
+            data-lenis-prevent
+          >
+            <div className="mx-auto max-w-5xl">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                className="mx-auto w-full rounded-lg shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
