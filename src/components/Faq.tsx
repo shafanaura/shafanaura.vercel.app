@@ -37,19 +37,39 @@ export function Faq() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-start justify-between gap-4 py-5 text-left"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${i}`}
+                  id={`faq-trigger-${i}`}
                 >
                   <span className="font-display text-lg font-semibold tracking-tight">
                     {item.q}
                   </span>
-                  <span className="font-mono text-accent" aria-hidden>
-                    {isOpen ? "−" : "+"}
+                  <span
+                    className={`mt-0.5 font-mono text-accent transition-transform duration-300 ease-out ${
+                      isOpen ? "rotate-45" : "rotate-0"
+                    }`}
+                    aria-hidden
+                  >
+                    +
                   </span>
                 </button>
-                {isOpen && (
-                  <p className="pb-5 pr-8 text-sm leading-relaxed text-muted">
-                    {item.a}
-                  </p>
-                )}
+                <div
+                  id={`faq-panel-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-trigger-${i}`}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p
+                      className={`pb-5 pr-8 text-sm leading-relaxed text-muted transition-opacity duration-300 ease-out ${
+                        isOpen ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
               </Reveal>
             );
           })}

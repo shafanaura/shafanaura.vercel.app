@@ -109,8 +109,6 @@ export const PROJECTS: Project[] = [
           "Rich form and date primitives accelerated the rebuild without sacrificing polish.",
       },
     ],
-    liveUrl: "https://yeki.co.jp",
-    liveLabel: "Was live · archived",
     status: "archived",
     cover: ["#1c1410", "#e8a87c"],
     screenshots: [
@@ -329,6 +327,31 @@ export const NOW = {
   updated: "Sep 2026",
 } as const;
 
+export const EXPERIENCE = [
+  {
+    company: "Self-employed",
+    role: "Fullstack JavaScript Developer",
+    period: "Jul 2022 — Present",
+    location: "Remote · Worldwide",
+    highlights: [
+      "Top-Rated on Upwork (top 10%) — product work for international clients",
+      "Shipped React, Next.js, and Vite apps across green energy, education, AI, and travel",
+      "Owned frontend and fullstack delivery end to end — UI, APIs, and handoff",
+    ],
+  },
+  {
+    company: "PT Neural Technologies Indonesia",
+    role: "Frontend Developer",
+    period: "May 2021 — Jan 2023",
+    location: "Jakarta Selatan, Indonesia",
+    highlights: [
+      "Led Telkomsel’s provider comparison dashboard in React.js",
+      "Built data visualizations with ECharts and Mapbox",
+      "Improved performance and UX from real user feedback",
+    ],
+  },
+] as const;
+
 export const HOW_I_WORK = {
   eyebrow: "How I work",
   title: "Clear async. Owned outcomes.",
@@ -463,7 +486,7 @@ export const SKILLS = [
 
 /** Outcomes — keep general; avoid single-client vanity metrics. */
 export const STATS = [
-  { value: 20, suffix: "+", label: "Products shipped" },
+  { value: 12, suffix: "+", label: "Products shipped" },
   { value: 5, suffix: "+", label: "Years shipping" },
   { value: 8, suffix: "+", label: "Core tools in daily use" },
   { value: 3, suffix: "", label: "Upwork recommendations" },
@@ -472,6 +495,7 @@ export const STATS = [
 export const NAV_ITEMS = [
   { label: "Home", id: "home" },
   { label: "Work", id: "works" },
+  { label: "Experience", id: "experience" },
   { label: "Approach", id: "approach" },
   { label: "Notes", id: "notes" },
   { label: "About", id: "about" },
@@ -482,7 +506,7 @@ export const ABOUT = {
   eyebrow: "About",
   statementLead: "I care about the whole product loop — ",
   statementMuted:
-    "booking flows, data UIs, and commerce that have to work in production, not just in a demo.",
+    "UI, APIs, and data layers that hold up in production, not just look good in a demo.",
   distributed: "Remote-friendly. Clear async. Full ownership.",
   findOnline: "Elsewhere",
 } as const;
@@ -496,6 +520,7 @@ export const FOOTER = {
     Navigate: [
       { label: "About", id: "about" },
       { label: "Work", id: "works" },
+      { label: "Experience", id: "experience" },
       { label: "Approach", id: "approach" },
       { label: "Notes", id: "notes" },
       { label: "Contact", id: "contact" },

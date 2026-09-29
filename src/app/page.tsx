@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { ContactModal } from "@/components/ContactModal";
+import { Experience } from "@/components/Experience";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -28,6 +29,7 @@ export default function Home() {
         <Now />
         <About />
         <Portfolio />
+        <Experience />
         <HowIWork />
         <Insights />
         <Testimonials />
