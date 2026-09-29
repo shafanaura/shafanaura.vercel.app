@@ -262,6 +262,107 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "aloy-beraterin",
+    name: "Aloy Beraterin",
+    category: "Enterprise · Project Mgmt",
+    year: "2023",
+    summary:
+      "Pre-engineering management web app — agile workflows to tighten project efficiency.",
+    description:
+      "Aloy Beraterin is a pre-engineering management web app built with agile methodologies to improve efficiency and streamline project management. The UI covers auth, dashboards, and map-aware project views for engineering teams.",
+    role: "Frontend Developer",
+    tech: [
+      "React",
+      "TypeScript",
+      "Mapbox",
+      "React Table",
+      "React Query",
+      "Chakra UI",
+      "Formik",
+    ],
+    tags: ["React", "TypeScript", "Dashboard"],
+    achievements: [
+      "Shipped dashboard and login flows for pre-engineering project management",
+      "Mapbox-backed views for location-aware project context",
+      "React Query + React Table for dense operational data",
+    ],
+    whyStack: [
+      {
+        tech: "React + TypeScript",
+        reason:
+          "Complex forms and dashboard state needed typed components without a full Next migration.",
+      },
+      {
+        tech: "Mapbox",
+        reason:
+          "Engineering projects are place-based — map context belongs in the primary UI.",
+      },
+      {
+        tech: "Chakra UI + Formik",
+        reason:
+          "Accessible primitives and form validation sped up auth and managerial CRUD screens.",
+      },
+    ],
+    status: "archived",
+    cover: ["#0f1a24", "#4a9fd4"],
+    screenshots: [
+      {
+        src: "/projects/aloy-dashboard.png",
+        alt: "Aloy Beraterin project management dashboard",
+        caption: "Dashboard",
+      },
+      {
+        src: "/projects/aloy-login.png",
+        alt: "Aloy Beraterin login screen",
+        caption: "Login",
+      },
+    ],
+  },
+  {
+    id: "level-up",
+    name: "Level Up",
+    category: "EdTech · Community",
+    year: "2022–2023",
+    summary:
+      "Knowledge-sharing platform for Indonesian youth learning from leading companies.",
+    description:
+      "Level Up by Digital Amoeba connects Indonesian youth with knowledge and practical skills from professionals in leading companies. The product surfaces learning opportunities and structured content in a Next.js web experience.",
+    role: "Frontend Developer",
+    tech: ["Next.js", "React Table", "React Query", "MUI", "Formik"],
+    tags: ["Next.js", "EdTech", "MUI"],
+    achievements: [
+      "Built the public learning platform UI on Next.js",
+      "Data tables and filters with React Table + React Query",
+      "Formik-driven flows for structured content submission",
+    ],
+    whyStack: [
+      {
+        tech: "Next.js",
+        reason:
+          "Content-heavy learning surfaces benefit from routing and a solid public web baseline.",
+      },
+      {
+        tech: "React Query + React Table",
+        reason:
+          "Catalog and skill listings needed predictable fetching with dense tabular UI.",
+      },
+      {
+        tech: "MUI + Formik",
+        reason:
+          "Material patterns and Formik kept forms and admin-adjacent screens consistent.",
+      },
+    ],
+    status: "archived",
+    cover: ["#1a1020", "#e07a5f"],
+    screenshots: [
+      {
+        src: "/projects/levelup.png",
+        alt: "Level Up by Digital Amoeba platform",
+        caption: "Platform",
+      },
+    ],
+  },
+  {
     id: "residency-programs",
     name: "Residency Programs",
     category: "EdTech · Data",
