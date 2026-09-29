@@ -7,7 +7,7 @@ export const SITE = {
   watermark: "SHIP",
   title: "Shafa Naura — Fullstack Developer",
   description:
-    "Fullstack developer building booking platforms, data products, and commerce — from UI to delivery.",
+    "Fullstack developer building booking platforms, data products, and commerce — Next.js, NestJS, TypeScript, Postgres, and Redis.",
   tagline: "Ship the whole loop.",
   role: "Fullstack Developer",
   location: "Remote · Asia / Worldwide",
@@ -28,7 +28,7 @@ export const HERO = {
   brandLine: "Shafa Naura",
   headline: "I build products from the first pixel to the last deploy.",
   support:
-    "Fullstack developer for booking, data, and commerce products — Next.js, React, and .NET when the stack needs it.",
+    "Fullstack JS/TS — Next.js on the client, NestJS on the API, with Postgres and Redis underneath.",
   ctaPrimary: "Start a project",
   ctaSecondary: "See selected work",
   statusLeft: `Since ${SITE.workingSince}`,
@@ -36,12 +36,12 @@ export const HERO = {
   statusRight: "Scroll",
   stack: [
     "Next.js",
+    "NestJS",
     "TypeScript",
+    "PostgreSQL",
+    "Redis",
+    "React",
     "React Query",
-    "Blazor",
-    "Chakra UI",
-    "Mantine",
-    "Tailwind",
     "Node",
   ] as const,
 };
@@ -137,25 +137,25 @@ export const PROJECTS: Project[] = [
       "E-commerce for radiation dosimeter badges — catalog, subscriptions, and account management.",
     description:
       "Dosimetry Badge serves dental clinics, hospitals, labs, and industrial facilities across the US. The platform handles product catalog, subscription-based pricing, and account management for ongoing radiation exposure monitoring.",
-    role: "Backend and Frontend Developer",
-    tech: ["Blazor", "C#", ".NET", "Tailwind CSS"],
-    tags: ["Blazor", "Subscriptions", "Fullstack"],
+    role: "Fullstack Developer",
+    tech: ["TypeScript", "React", "Node", "Tailwind CSS"],
+    tags: ["Subscriptions", "E-commerce", "Fullstack"],
     achievements: [
-      "Client UI and backend logic in one C# / Blazor codebase",
+      "Shipped client-facing UI and supporting product logic for catalog and accounts",
       "Subscription and pricing flows (monthly, quarterly, annual)",
       "Account features: add/remove badges and wearer reassignment",
-      "Clean Tailwind styling on Blazor components",
+      "Clean, fast interface with a consistent design system",
     ],
     whyStack: [
       {
-        tech: "Blazor",
+        tech: "Component UI + Tailwind",
         reason:
-          "Client already lived on .NET — one language for UI and server cut context-switching and shared validation.",
+          "Needed a maintainable catalog and account UI that stayed consistent while pricing rules evolved.",
       },
       {
-        tech: "Tailwind CSS",
+        tech: "Typed fullstack flow",
         reason:
-          "Utility styling kept the Blazor UI consistent and fast to iterate without a heavy design-system rewrite.",
+          "Subscription state and account mutations benefit from clear contracts between UI and server logic.",
       },
     ],
     liveUrl: "https://dosimetrybadge.com",
@@ -277,7 +277,7 @@ export const PROJECTS: Project[] = [
     id: "energinno",
     name: "Energinno",
     category: "Marketing · Climate",
-    year: "2023",
+    year: "2024",
     summary:
       "Marketing site for zero-energy building (ZEB) solutions in Korea.",
     description:
@@ -325,7 +325,7 @@ export const NOW = {
   eyebrow: "Now",
   items: [
     "Collecting deeper case studies and screenshots for this portfolio",
-    "Open for freelance on Upwork and direct — Next.js / fullstack product work",
+    "Open for freelance on Upwork and direct — Next.js + NestJS fullstack product work",
     "Exploring stronger design-system and DX patterns across client stacks",
   ],
   updated: "Sep 2026",
@@ -349,11 +349,11 @@ export const HOW_I_WORK = {
     },
     {
       title: "What I take",
-      body: "Product UIs, booking/search flows, migrations (e.g. no-code → Next), .NET/Blazor when it fits.",
+      body: "Product UIs, APIs, and data layers in JS/TS — Next.js, NestJS, Postgres, Redis, booking/search flows, and no-code → Next migrations.",
     },
     {
       title: "What I skip",
-      body: "Pure design-only retainers, or stacks I can’t stand behind in production.",
+      body: "Pure design-only retainers, or stacks outside JS/TS that I won’t own in production.",
     },
     {
       title: "Response",
@@ -390,9 +390,27 @@ export const TESTIMONIALS = [
 export const INSIGHTS = [
   {
     id: "why-next",
-    title: "Why I reach for Next.js on tourism & marketing sites",
-    body: "Organic search and first load matter more than clever SPA tricks. SSR/SSG plus a sane deploy path usually beats a client-only app when the business depends on Google.",
-    tags: ["Next.js", "SEO"],
+    title: "Why Next.js on the product surface",
+    body: "SSR/SSG, routing, and deployability keep marketing and app UIs fast — especially when organic search or first paint matters.",
+    tags: ["Next.js", "Frontend"],
+  },
+  {
+    id: "why-nestjs",
+    title: "Why NestJS on the API side",
+    body: "Modules, DI, and typed providers keep growing backends readable. For booking, subscriptions, and auth-heavy domains, structure beats a flat Express folder after month three.",
+    tags: ["NestJS", "Backend"],
+  },
+  {
+    id: "why-postgres",
+    title: "Why PostgreSQL as the source of truth",
+    body: "Relational data, constraints, and migrations age better than “just use a document DB.” Filters, bookings, and account state belong in Postgres.",
+    tags: ["PostgreSQL", "Data"],
+  },
+  {
+    id: "why-redis",
+    title: "Why Redis next to the API",
+    body: "Sessions, rate limits, queues, and hot caches shouldn’t hammer Postgres. Redis keeps latency down when traffic spikes on search or auth paths.",
+    tags: ["Redis", "Performance"],
   },
   {
     id: "why-react-query",
@@ -401,15 +419,9 @@ export const INSIGHTS = [
     tags: ["React Query", "UX"],
   },
   {
-    id: "why-blazor",
-    title: "When Blazor is the honest choice",
-    body: "If the org already runs on .NET and needs interactive UI plus server logic, one language can lower risk. I don’t force React into every room.",
-    tags: ["Blazor", ".NET"],
-  },
-  {
     id: "why-migrate",
     title: "When to leave no-code behind",
-    body: "Bubble (and friends) are great until custom flows, performance, or ownership block growth. Yeki taught me to migrate with feature parity first, then unlock what no-code couldn’t do.",
+    body: "Bubble (and friends) are great until custom flows, performance, or ownership block growth. Migrate with feature parity first, then unlock what no-code couldn’t do.",
     tags: ["Migration", "Next.js"],
   },
 ] as const;
@@ -417,7 +429,7 @@ export const INSIGHTS = [
 export const FAQ = [
   {
     q: "Do you work only on frontend?",
-    a: "No — I often own UI plus API/data when the stack allows (e.g. Blazor fullstack, Next + APIs). Pure backend-only retainers are rarer.",
+    a: "No — I ship fullstack in JS/TS: Next.js on the UI, NestJS APIs, PostgreSQL, and Redis when the product needs a real data layer.",
   },
   {
     q: "Fixed price or hourly?",
@@ -437,22 +449,22 @@ export const SKILLS = [
   {
     index: "01",
     title: "Product UI",
-    description: "Next.js / React interfaces for search, booking, and dashboards.",
+    description: "Next.js / React for search, booking, dashboards, and marketing surfaces.",
   },
   {
     index: "02",
-    title: "Fullstack delivery",
-    description: "UI + server logic — including Blazor/.NET when that’s the right home.",
+    title: "APIs & services",
+    description: "NestJS + TypeScript modules for auth, bookings, and domain logic.",
   },
   {
     index: "03",
-    title: "Migrations",
-    description: "No-code → code rebuilds with parity first, then leverage.",
+    title: "Data layer",
+    description: "PostgreSQL as source of truth; Redis for cache, sessions, and queues.",
   },
   {
     index: "04",
-    title: "Design systems in practice",
-    description: "Chakra, Mantine, MUI, Tailwind — pick for speed without chaos.",
+    title: "Migrations & systems",
+    description: "No-code → Next rebuilds, design systems, and end-to-end delivery.",
   },
 ] as const;
 
@@ -486,7 +498,7 @@ export const FOOTER = {
   ctaLines: ["Got a product in mind?", "Let's build it properly."] as const,
   ctaButton: "Start a project",
   tagline:
-    "Fullstack developer — booking, data, and commerce products shipped end to end.",
+    "Fullstack developer — Next.js, NestJS, Postgres, and Redis for products that ship end to end.",
   columns: {
     Navigate: [
       { label: "About", id: "about" },
@@ -497,9 +509,9 @@ export const FOOTER = {
     ],
     Focus: [
       { label: "Product UI", id: "skills" },
-      { label: "Fullstack", id: "skills" },
+      { label: "APIs & NestJS", id: "skills" },
+      { label: "Postgres & Redis", id: "skills" },
       { label: "Migrations", id: "skills" },
-      { label: "Design systems", id: "skills" },
     ],
   },
   legal: `© ${new Date().getFullYear()} ${SITE.name}`,
