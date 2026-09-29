@@ -54,7 +54,7 @@ export function Hero() {
                 {HERO.support}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <PillButton variant="accent" arrow="right" onClick={openRequest}>
                   {HERO.ctaPrimary}
                 </PillButton>
@@ -64,6 +64,14 @@ export function Hero() {
                 >
                   {HERO.ctaSecondary}
                 </PillButton>
+                <a
+                  href={SITE.social.upwork}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/50 underline-offset-4 transition hover:text-accent-bright hover:underline"
+                >
+                  Upwork profile
+                </a>
               </div>
             </div>
           </div>

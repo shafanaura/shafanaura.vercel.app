@@ -17,7 +17,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
   return (
     <Reveal
       as="li"
-      delay={index * 80}
+      delay={index * 70}
       from={{ opacity: 0, transform: "translateY(28px)" }}
     >
       <button
@@ -28,16 +28,17 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         <AbstractCover
           from={project.cover[0]}
           to={project.cover[1]}
-          label={project.id}
+          label={project.status === "archived" ? "archived" : project.id}
           className="min-h-44 md:col-span-4 md:min-h-full"
         />
 
-        <div className="flex flex-col justify-between gap-6 p-6 sm:p-8 md:col-span-8">
+        <div className="flex flex-col justify-between gap-5 p-6 sm:p-8 md:col-span-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
                 {String(index + 1).padStart(2, "0")} · {project.category} ·{" "}
                 {project.year}
+                {project.status === "archived" ? " · archived" : ""}
               </p>
               <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">
                 {project.name}
@@ -45,6 +46,11 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
                 {project.summary}
               </p>
+              {project.impact && (
+                <p className="mt-3 font-mono text-xs text-accent">
+                  → {project.impact}
+                </p>
+              )}
             </div>
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-ink text-accent-bright transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRight />
@@ -75,13 +81,14 @@ export function Portfolio() {
             </Reveal>
             <LineReveal
               as="h2"
-              lines={["Things I've shipped"]}
+              lines={["Case studies"]}
               delay={80}
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />
           </div>
           <p className="max-w-xs text-sm text-muted">
-            Placeholder projects for now — swap in your real case studies later.
+            Real client products. Screenshots will replace abstract covers as I
+            finish collecting assets.
           </p>
         </div>
 

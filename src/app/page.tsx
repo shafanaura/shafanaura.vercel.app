@@ -1,15 +1,19 @@
 import { About } from "@/components/About";
 import { ContactModal } from "@/components/ContactModal";
+import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { HowIWork } from "@/components/HowIWork";
+import { Insights } from "@/components/Insights";
 import { NavMenu } from "@/components/NavMenu";
+import { Now } from "@/components/Now";
 import { PageLoader } from "@/components/PageLoader";
 import { Portfolio } from "@/components/Portfolio";
-import { ProcessStrip } from "@/components/ProcessStrip";
 import { ProjectModal } from "@/components/ProjectModal";
 import { Skills } from "@/components/Skills";
 import { Stats } from "@/components/Stats";
+import { Testimonials } from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -21,11 +25,15 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
+        <Now />
         <About />
-        <ProcessStrip />
         <Portfolio />
+        <HowIWork />
+        <Insights />
+        <Testimonials />
         <Skills />
         <Stats />
+        <Faq />
       </main>
       <Footer />
       <NavMenu />

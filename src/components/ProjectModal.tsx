@@ -5,7 +5,6 @@ import {
   ArrowRight,
   CloseIcon,
   ExternalLinkIcon,
-  GithubIcon,
 } from "@/components/icons";
 import { AbstractCover } from "@/components/ui/primitives";
 import { EASE } from "@/lib/constants";
@@ -103,7 +102,7 @@ export function ProjectModal() {
                       ? "ring-accent"
                       : "ring-transparent opacity-70 hover:opacity-100"
                   }`}
-                  aria-label={`Screenshot ${i + 1}`}
+                  aria-label={`View ${s.caption ?? i + 1}`}
                 >
                   <AbstractCover
                     from={(s.tone ?? activeProject.cover)[0]}
@@ -115,10 +114,11 @@ export function ProjectModal() {
             </div>
           )}
 
-          <div className="space-y-6 bg-white p-6 sm:p-8">
+          <div className="space-y-7 bg-white p-6 sm:p-8">
             <div>
               <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
                 {activeProject.category} — {activeProject.year}
+                {activeProject.status === "archived" ? " · archived" : ""}
               </p>
               <h2 className="mt-1 font-display text-3xl font-bold tracking-tight">
                 {activeProject.name}
@@ -126,31 +126,67 @@ export function ProjectModal() {
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
                 {activeProject.description}
               </p>
+              {activeProject.impact && (
+                <p className="mt-3 rounded-xl bg-surface px-3 py-2 font-mono text-xs text-accent">
+                  Impact · {activeProject.impact}
+                </p>
+              )}
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div>
-                <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
-                  Role
-                </p>
-                <p className="mt-1.5 text-sm font-medium leading-snug">
-                  {activeProject.role}
-                </p>
-              </div>
-              <div>
-                <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
-                  Tech
-                </p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {activeProject.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-md bg-surface px-2.5 py-1 font-mono text-xs text-foreground/80"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                Role
+              </p>
+              <p className="mt-1.5 text-sm font-medium">{activeProject.role}</p>
+            </div>
+
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                What I achieved
+              </p>
+              <ul className="mt-3 space-y-2">
+                {activeProject.achievements.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-sm leading-relaxed text-foreground/80"
+                  >
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                Why this stack
+              </p>
+              <ul className="mt-3 space-y-3">
+                {activeProject.whyStack.map((row) => (
+                  <li
+                    key={row.tech}
+                    className="rounded-xl border border-line bg-background px-4 py-3"
+                  >
+                    <p className="font-mono text-xs text-accent">{row.tech}</p>
+                    <p className="mt-1 text-sm text-muted">{row.reason}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                Tech
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {activeProject.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-md bg-surface px-2.5 py-1 font-mono text-xs text-foreground/80"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -162,19 +198,19 @@ export function ProjectModal() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-sm font-semibold text-accent-bright"
                 >
-                  Live site
+                  {activeProject.liveLabel ?? "Live site"}
                   <ExternalLinkIcon size="1rem" />
                 </a>
               )}
-              {activeProject.repoUrl && (
+              {activeProject.galleryUrl && (
                 <a
-                  href={activeProject.repoUrl}
+                  href={activeProject.galleryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold"
                 >
-                  <GithubIcon size="1rem" />
-                  Source
+                  Screenshots
+                  <ExternalLinkIcon size="1rem" />
                 </a>
               )}
               <button
