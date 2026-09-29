@@ -40,6 +40,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="abca1f62-4743-4743-a08f-7e5291af5455"
+        />
+      </head>
       <body className="min-h-full font-sans">
         <SiteProvider>{children}</SiteProvider>
       </body>

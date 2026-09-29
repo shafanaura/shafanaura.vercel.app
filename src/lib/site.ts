@@ -18,7 +18,7 @@ export const SITE = {
   social: {
     github: "https://github.com/shafanaura",
     linkedin: "https://www.linkedin.com/in/shafanaura",
-    upwork: "https://www.upwork.com/freelancers/~01055851b3296d5c11",
+    upwork: "https://www.upwork.com/freelancers/shafanaura",
     instagram: "https://www.instagram.com/shafanaura",
   },
 } as const;
@@ -367,21 +367,21 @@ export const TESTIMONIALS = [
     quote:
       "Shafa came on to work with me on a React/NextJS/NodeJS project. She had great ideas throughout the project, worked diligently on completing the tasks assigned, and communicated well with me regarding the project progress, hurdles, improvements. Her technical abilities are awesome and she is willing to learn new things needed for the project. Overall I have nothing but positive things to say about Shafa and will definitely work with her again in the future!",
     name: "Upwork client",
-    role: "React / Next.js / Node.js project",
+    role: "Frontend React.js",
     source: "Upwork",
   },
   {
     quote:
       "Shafa was very professional in her communication and work ethic. She followed the tasks accurately and suggested improvements as she saw which resulted in a better final product. I will have no hesitation to work with Shafa again on future projects or recommend her to any project. Her willingness and dedication to learning means she will continue to grow into becoming an even greater developer. I highly highly recommend Shafa!",
     name: "Upwork client",
-    role: "Long-term collaboration",
+    role: "Frontend React.js",
     source: "Upwork",
   },
   {
     quote:
       "She was diligent, hardworking, and delivered quality results. Highly recommended!",
     name: "Upwork client",
-    role: "Freelance engagement",
+    role: "Frontend React.js Engineer",
     source: "Upwork",
   },
 ] as const;
