@@ -81,7 +81,10 @@ export function Experience() {
                   <p className="mt-0.5 text-subtle">{job.location}</p>
                 </div>
               </div>
-              <ul className="mt-4 space-y-2">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/75">
+                {job.summary}
+              </p>
+              <ul className="mt-3 space-y-2">
                 {job.highlights.map((line) => (
                   <li
                     key={line}

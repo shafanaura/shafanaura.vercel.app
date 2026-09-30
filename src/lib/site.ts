@@ -64,7 +64,9 @@ export type Project = {
   summary: string;
   description: string;
   role: string;
+  /** Stack only — shown with TechChip / icons. */
   tech: string[];
+  /** Domain / topic labels only (Migration, Booking, SEO…) — not frameworks. */
   tags: string[];
   achievements: string[];
   whyStack: { tech: string; reason: string }[];
@@ -88,7 +90,7 @@ export const PROJECTS: Project[] = [
       "Yeki was a booking platform for kids’ learning clubs (ages 5–9). Parents browsed clubs and enrolled kids into scheduled sessions. Originally on Bubble.io, it was rebuilt for performance and features Bubble couldn’t support cleanly.",
     role: "Frontend Developer",
     tech: ["Next.js", "Mantine UI", "React Query"],
-    tags: ["Migration", "Next.js", "Booking"],
+    tags: ["Migration", "Booking"],
     achievements: [
       "Full migration from Bubble.io to Next.js with a major performance boost",
       "Custom features beyond no-code constraints",
@@ -142,7 +144,7 @@ export const PROJECTS: Project[] = [
       "Energinno (branded Energibuild) offers zero-energy building solutions — helping clients design and plan energy-efficient buildings that meet Korea’s ZEB standards.",
     role: "Frontend Developer",
     tech: ["Next.js", "MUI", "Tailwind CSS"],
-    tags: ["Next.js", "Landing", "MUI"],
+    tags: ["Landing", "Marketing"],
     achievements: [
       "Marketing and landing pages for the ZEB offering",
       "MUI + Tailwind for polished, efficient UI delivery",
@@ -176,14 +178,14 @@ export const PROJECTS: Project[] = [
     id: "backwater-trip",
     name: "BackwaterTrip",
     category: "Travel · Booking",
-    year: "2024–2025",
+    year: "2023",
     summary:
       "Houseboat booking for Kerala’s backwaters — search, compare, and enquire in real time.",
     description:
       "BackwaterTrip is a booking platform for houseboat trips through the Backwaters of Kerala, India. Travelers search, compare, and enquire about packages by room count and trip type (family, romantic, and more), with real-time check-in / check-out and guest search.",
     role: "Frontend Developer",
     tech: ["Next.js", "React Query", "Chakra UI"],
-    tags: ["Next.js", "Booking", "SEO"],
+    tags: ["Booking", "SEO"],
     achievements: [
       "Dynamic search (check-in, check-out, guests) with real-time filtering",
       "Scalable package listing + detail pages for new trip categories",
@@ -208,7 +210,7 @@ export const PROJECTS: Project[] = [
           "Accessible primitives let us ship a clean booking UI without reinventing form patterns.",
       },
     ],
-    status: "live",
+    status: "archived",
     cover: ["#0c1f2e", "#1a9b7a"],
     screenshots: [
       {
@@ -222,14 +224,14 @@ export const PROJECTS: Project[] = [
     id: "dosimetry-badge",
     name: "Dosimetry Badge",
     category: "E-commerce · Health",
-    year: "2023–2024",
+    year: "2023",
     summary:
       "E-commerce for radiation dosimeter badges — catalog, subscriptions, and account management.",
     description:
       "Dosimetry Badge serves dental clinics, hospitals, labs, and industrial facilities across the US. The platform handles product catalog, subscription-based pricing, and account management for ongoing radiation exposure monitoring.",
     role: "Fullstack Developer",
     tech: ["Blazor", ".NET", "C#"],
-    tags: ["Blazor", "Subscriptions", "E-commerce"],
+    tags: ["Subscriptions", "E-commerce"],
     achievements: [
       "Shipped Blazor UI and .NET product logic for catalog and accounts",
       "Subscription and pricing flows (monthly, quarterly, annual)",
@@ -279,7 +281,7 @@ export const PROJECTS: Project[] = [
       "Chakra UI",
       "Formik",
     ],
-    tags: ["React", "TypeScript", "Dashboard"],
+    tags: ["Dashboard", "Maps"],
     achievements: [
       "Shipped dashboard and login flows for pre-engineering project management",
       "Mapbox-backed views for location-aware project context",
@@ -321,14 +323,14 @@ export const PROJECTS: Project[] = [
     id: "residency-programs",
     name: "Residency Programs",
     category: "EdTech · Data",
-    year: "2022–2023",
+    year: "2021–2022",
     summary:
       "Data-driven matching for IMGs shortlisting US residency programs.",
     description:
       "ResidencyPrograms.io helps international medical graduates find and shortlist US residency programs using filters like state, USMLE step scores, visa requirements, and medical school connections.",
     role: "Backend and Frontend Developer",
     tech: ["Next.js", "React", "Chakra UI", "Tailwind CSS"],
-    tags: ["Next.js", "Filters", "Data UI"],
+    tags: ["Filters", "Data UI"],
     achievements: [
       "Personalized matching UI with advanced filtering and sorting",
       "Explore/search experience by specialty",
@@ -369,7 +371,7 @@ export const PROJECTS: Project[] = [
       "Level Up by Digital Amoeba connects Indonesian youth with knowledge and practical skills from professionals in leading companies. The product surfaces learning opportunities and structured content in a Next.js web experience.",
     role: "Frontend Developer",
     tech: ["Next.js", "React Table", "React Query", "MUI", "Formik"],
-    tags: ["Next.js", "EdTech", "MUI"],
+    tags: ["EdTech", "Community"],
     achievements: [
       "Built the public learning platform UI on Next.js",
       "Data tables and filters with React Table + React Query",
@@ -428,6 +430,8 @@ export type ExperienceEntry = {
   period: string;
   duration: string;
   location: string;
+  /** Short LinkedIn-style role blurb (1–3 sentences). */
+  summary: string;
   highlights: readonly string[];
   stack: readonly string[];
 };
@@ -440,11 +444,16 @@ export const EXPERIENCE: ExperienceEntry[] = [
     period: "Feb 2025 — Present",
     duration: "1 yr 8 mos",
     location: "Remote · Office in Bogor, Indonesia",
+    summary:
+      "Placed at a multinational FMCG company to build an internal digital workspace for employees and vendors. Focused on turning manual processes into an integrated, scalable platform used across the business.",
     highlights: [
-      "Building fullstack JavaScript products for an IT services & consulting team",
-      "Owning features across the stack — UI, APIs, and delivery",
+      "Delivered >10 applications across frontend and backend",
+      "Built end-to-end access flows — from new-user requests to multi-level approval matrices",
+      "Developed the core authorization service with ~25 modules and 180+ API endpoints",
+      "Integrated SSO/SAML, JWT, and RBAC for secure, controlled system access",
+      "Shipped with Next.js, NestJS, PostgreSQL, and Redis in a production-ready architecture",
     ],
-    stack: ["React", "Next.js", "TypeScript", "Node", "Express.js"],
+    stack: ["Next.js", "NestJS", "PostgreSQL", "Redis"],
   },
   {
     company: "Self-employed",
@@ -452,6 +461,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
     period: "Jul 2022 — Present",
     duration: "4 yrs 3 mos",
     location: "Remote · Worldwide",
+    summary:
+      "Top-Rated freelance fullstack developer on Upwork, building React, Next.js, and Vite applications for international clients. Projects span green energy, education, AI, and travel — owning delivery from UI through APIs and handoff.",
     highlights: [
       "Top-Rated on Upwork (top 10%) — product work for international clients",
       "Shipped React, Next.js, and Vite apps across green energy, education, AI, and travel",
@@ -466,6 +477,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
     period: "May 2021 — Jan 2023",
     duration: "1 yr 9 mos",
     location: "Remote · Office in Jakarta Selatan, Indonesia",
+    summary:
+      "Frontend developer who led Telkomsel’s provider comparison dashboard in React.js. Built data visualizations with ECharts and Mapbox, and improved performance and UX from real user feedback.",
     highlights: [
       "Led Telkomsel’s provider comparison dashboard in React.js",
       "Built data visualizations with ECharts and Mapbox",
@@ -479,6 +492,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
     period: "Jun 2020 — Jul 2020",
     duration: "2 mos",
     location: "Jawa Timur, Indonesia",
+    summary:
+      "Built a seller store-management web app integrating Shopee, Tokopedia, and Tokoku, plus an online cashier app for cafes covering employees, menus, and income tracking. Owned design and prototyping in Framer alongside implementation.",
     highlights: [
       "Built a seller store-management web app integrating Shopee, Tokopedia, and Tokoku",
       "Shipped an online cashier app for cafes — employees, menus, and income tracking",

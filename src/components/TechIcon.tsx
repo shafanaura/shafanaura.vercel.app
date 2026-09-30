@@ -426,3 +426,20 @@ export function TechChip({
     </span>
   );
 }
+
+/** Domain / topic chip — muted outline, no tech icon. */
+export function DomainChip({
+  label,
+  className = "",
+}: {
+  label: string;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-md border border-line/80 bg-transparent px-2.5 py-1 font-mono text-[0.7rem] tracking-wide text-muted ${className}`}
+    >
+      {label}
+    </span>
+  );
+}

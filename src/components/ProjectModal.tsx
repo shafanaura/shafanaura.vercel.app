@@ -12,7 +12,7 @@ import {
   ProjectShot,
   ProjectShotThumb,
 } from "@/components/ProjectMedia";
-import { TechChip, TechIcon } from "@/components/TechIcon";
+import { DomainChip, TechChip, TechIcon } from "@/components/TechIcon";
 import { EASE } from "@/lib/constants";
 import { useSite } from "@/providers/LumoraProvider";
 
@@ -201,6 +201,17 @@ export function ProjectModal() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                Focus
+              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {activeProject.tags.map((tag) => (
+                  <DomainChip key={tag} label={tag} />
+                ))}
+              </div>
             </div>
 
             <div>

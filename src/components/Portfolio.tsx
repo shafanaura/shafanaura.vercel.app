@@ -3,7 +3,7 @@
 import { ArrowUpRight } from "@/components/icons";
 import { ProjectCover } from "@/components/ProjectMedia";
 import { LineReveal, Reveal } from "@/components/ui/motion";
-import { TechChip } from "@/components/TechIcon";
+import { DomainChip, TechChip } from "@/components/TechIcon";
 import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { PROJECTS, type Project } from "@/lib/site";
 import { useSite } from "@/providers/LumoraProvider";
@@ -53,10 +53,17 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <TechChip key={tag} label={tag} tone="surface" />
-            ))}
+          <div className="flex flex-col gap-2.5">
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.map((tag) => (
+                <DomainChip key={tag} label={tag} />
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t) => (
+                <TechChip key={t} label={t} tone="surface" />
+              ))}
+            </div>
           </div>
         </div>
       </button>
