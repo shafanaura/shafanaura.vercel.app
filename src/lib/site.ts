@@ -28,7 +28,7 @@ export const SITE = {
 
 export const HERO = {
   eyebrow: "Open for freelance · Upwork & direct",
-  brandLine: "Shafa Naura",
+  brandLine: "Glad you’re here.",
   headline: "I build products from the first pixel to the last deploy.",
   support:
     "Fullstack JS/TS — Next.js on the client, NestJS on the API, with Postgres and Redis underneath.",
@@ -563,37 +563,45 @@ export const INSIGHTS = [
     id: "why-next",
     title: "Why Next.js on the product surface",
     body: "SSR/SSG, routing, and deployability keep marketing and app UIs fast — especially when organic search or first paint matters.",
-    tags: ["Next.js", "Frontend"],
+    /** Domain / topic — DomainChip row. */
+    tags: ["Frontend"],
+    /** Stack — TechChip row. */
+    tech: ["Next.js"],
   },
   {
     id: "why-nestjs",
     title: "Why NestJS on the API side",
     body: "Modules, DI, and typed providers keep growing backends readable. For booking, subscriptions, and auth-heavy domains, structure beats a flat Express folder after month three.",
-    tags: ["NestJS", "Backend"],
+    tags: ["Backend"],
+    tech: ["NestJS"],
   },
   {
     id: "why-postgres",
     title: "Why PostgreSQL as the source of truth",
     body: "Relational data, constraints, and migrations age better than “just use a document DB.” Filters, bookings, and account state belong in Postgres.",
-    tags: ["PostgreSQL", "Data"],
+    tags: ["Data"],
+    tech: ["PostgreSQL"],
   },
   {
     id: "why-redis",
     title: "Why Redis next to the API",
     body: "Sessions, rate limits, queues, and hot caches shouldn’t hammer Postgres. Redis keeps latency down when traffic spikes on search or auth paths.",
-    tags: ["Redis", "Performance"],
+    tags: ["Performance"],
+    tech: ["Redis"],
   },
   {
     id: "why-react-query",
     title: "Why React Query for search and booking flows",
     body: "Filters, calendars, and enquiry forms thrash the network. A cache layer with mutations keeps UX calm without inventing a bespoke state machine every time.",
-    tags: ["React Query", "UX"],
+    tags: ["UX"],
+    tech: ["React Query"],
   },
   {
     id: "why-migrate",
     title: "When to leave no-code behind",
     body: "Bubble (and friends) are great until custom flows, performance, or ownership block growth. Migrate with feature parity first, then unlock what no-code couldn’t do.",
-    tags: ["Migration", "Next.js"],
+    tags: ["Migration"],
+    tech: ["Next.js"],
   },
 ] as const;
 
@@ -659,6 +667,7 @@ export const NAV_ITEMS = [
 
 export const ABOUT = {
   eyebrow: "About",
+  name: SITE.name,
   statementLead: "I care about the whole product loop — ",
   statementMuted:
     "UI, APIs, and data layers that hold up in production, not just look good in a demo.",

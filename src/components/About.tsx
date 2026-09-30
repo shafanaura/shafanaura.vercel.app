@@ -62,12 +62,12 @@ export function About() {
                   className="size-28 rounded-2xl ring-1 ring-line"
                   imgClassName="rounded-2xl"
                 />
-                <div className="pt-1">
+                <div className="min-w-0 pt-1">
                   <p className="font-mono text-[0.65rem] tracking-[0.16em] text-muted uppercase">
                     Signal
                   </p>
-                  <p className="mt-1 text-sm font-medium text-foreground">
-                    {SITE.name}
+                  <p className="mt-1.5 text-base font-medium leading-snug text-foreground">
+                    {ABOUT.name}
                   </p>
                 </div>
               </div>

@@ -185,6 +185,17 @@ export function ProjectModal() {
 
             <div>
               <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
+                Focus
+              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {activeProject.tags.map((tag) => (
+                  <DomainChip key={tag} label={tag} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
                 Why this stack
               </p>
               <ul className="mt-3 space-y-3">
@@ -201,17 +212,6 @@ export function ProjectModal() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div>
-              <p className="font-mono text-[0.65rem] tracking-[0.14em] text-muted uppercase">
-                Focus
-              </p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {activeProject.tags.map((tag) => (
-                  <DomainChip key={tag} label={tag} />
-                ))}
-              </div>
             </div>
 
             <div>

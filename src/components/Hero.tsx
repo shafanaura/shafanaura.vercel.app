@@ -44,7 +44,7 @@ export function Hero() {
                 {HERO.eyebrow}
               </p>
 
-              <p className="mb-4 font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
+              <p className="mb-4 font-display text-sm font-medium tracking-wide text-white/50 sm:text-base">
                 {HERO.brandLine}
               </p>
 

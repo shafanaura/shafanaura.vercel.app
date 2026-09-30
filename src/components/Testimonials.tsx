@@ -20,17 +20,16 @@ export function Testimonials() {
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />
           </div>
-          <p className="max-w-xs text-sm text-muted">
-            Real feedback from Upwork clients.{" "}
+          <p className="max-w-xs text-sm text-muted sm:shrink-0 sm:text-right">
+            Real feedback from Upwork clients.
             <a
               href={SITE.social.upwork}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent underline-offset-2 hover:underline"
+              className="mt-1 inline-block text-accent underline-offset-2 hover:underline"
             >
-              See full profile
+              See full profile.
             </a>
-            .
           </p>
         </div>
 

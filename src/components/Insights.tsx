@@ -1,7 +1,7 @@
 "use client";
 
 import { LineReveal, Reveal } from "@/components/ui/motion";
-import { TechChip } from "@/components/TechIcon";
+import { DomainChip, TechChip } from "@/components/TechIcon";
 import { Eyebrow, Shell } from "@/components/ui/primitives";
 import { INSIGHTS } from "@/lib/site";
 
@@ -32,10 +32,17 @@ export function Insights() {
               from={{ opacity: 0, transform: "translateY(16px)" }}
               className="rounded-2xl border border-line bg-white p-6 sm:p-7"
             >
-              <div className="flex flex-wrap gap-2">
-                {note.tags.map((tag) => (
-                  <TechChip key={tag} label={tag} tone="surface" />
-                ))}
+              <div className="flex flex-col gap-2.5">
+                <div className="flex flex-wrap gap-1.5">
+                  {note.tags.map((tag) => (
+                    <DomainChip key={tag} label={tag} />
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {note.tech.map((t) => (
+                    <TechChip key={t} label={t} tone="surface" />
+                  ))}
+                </div>
               </div>
               <h3 className="mt-4 font-display text-xl font-bold tracking-tight">
                 {note.title}
