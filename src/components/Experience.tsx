@@ -3,7 +3,7 @@
 import { TechChip } from "@/components/TechIcon";
 import { LineReveal, Reveal } from "@/components/ui/motion";
 import { Eyebrow, Shell } from "@/components/ui/primitives";
-import { EXPERIENCE, SITE } from "@/lib/site";
+import { EXPERIENCE, EXPERIENCE_TOTAL, SITE } from "@/lib/site";
 
 export function Experience() {
   return (
@@ -21,18 +21,23 @@ export function Experience() {
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />
           </div>
-          <p className="max-w-xs text-sm text-muted sm:shrink-0 sm:text-right">
-            From agency product work to Top-Rated freelance.{" "}
-            <a
-              href={SITE.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline-offset-2 hover:underline"
-            >
-              Full LinkedIn
-            </a>
-            .
-          </p>
+          <div className="max-w-xs sm:shrink-0 sm:text-right">
+            <p className="font-mono text-[0.7rem] text-muted">
+              {EXPERIENCE_TOTAL} total
+            </p>
+            <p className="mt-1.5 text-sm text-muted">
+              From agency product work to Top-Rated freelance.{" "}
+              <a
+                href={SITE.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline-offset-2 hover:underline"
+              >
+                Full LinkedIn
+              </a>
+              .
+            </p>
+          </div>
         </div>
 
         <ol className="mt-14 space-y-0 border-l border-line pl-6 sm:pl-8">
@@ -58,7 +63,10 @@ export function Experience() {
                   </p>
                 </div>
                 <div className="shrink-0 font-mono text-[0.7rem] text-muted sm:text-right">
-                  <p>{job.period}</p>
+                  <p>
+                    {job.period}{" "}
+                    <span className="text-subtle">({job.duration})</span>
+                  </p>
                   <p className="mt-0.5 text-subtle">{job.location}</p>
                 </div>
               </div>

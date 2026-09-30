@@ -208,7 +208,6 @@ export const PROJECTS: Project[] = [
           "Accessible primitives let us ship a clean booking UI without reinventing form patterns.",
       },
     ],
-    liveUrl: "https://backwatertrip.com",
     status: "live",
     cover: ["#0c1f2e", "#1a9b7a"],
     screenshots: [
@@ -319,50 +318,6 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "level-up",
-    name: "Level Up",
-    category: "EdTech · Community",
-    year: "2022–2023",
-    summary:
-      "Knowledge-sharing platform for Indonesian youth learning from leading companies.",
-    description:
-      "Level Up by Digital Amoeba connects Indonesian youth with knowledge and practical skills from professionals in leading companies. The product surfaces learning opportunities and structured content in a Next.js web experience.",
-    role: "Frontend Developer",
-    tech: ["Next.js", "React Table", "React Query", "MUI", "Formik"],
-    tags: ["Next.js", "EdTech", "MUI"],
-    achievements: [
-      "Built the public learning platform UI on Next.js",
-      "Data tables and filters with React Table + React Query",
-      "Formik-driven flows for structured content submission",
-    ],
-    whyStack: [
-      {
-        tech: "Next.js",
-        reason:
-          "Content-heavy learning surfaces benefit from routing and a solid public web baseline.",
-      },
-      {
-        tech: "React Query + React Table",
-        reason:
-          "Catalog and skill listings needed predictable fetching with dense tabular UI.",
-      },
-      {
-        tech: "MUI + Formik",
-        reason:
-          "Material patterns and Formik kept forms and admin-adjacent screens consistent.",
-      },
-    ],
-    status: "archived",
-    cover: ["#1a1020", "#e07a5f"],
-    screenshots: [
-      {
-        src: "/projects/levelup.png",
-        alt: "Level Up by Digital Amoeba platform",
-        caption: "Platform",
-      },
-    ],
-  },
-  {
     id: "residency-programs",
     name: "Residency Programs",
     category: "EdTech · Data",
@@ -403,6 +358,50 @@ export const PROJECTS: Project[] = [
       },
     ],
   },
+  {
+    id: "level-up",
+    name: "Level Up",
+    category: "EdTech · Community",
+    year: "2021",
+    summary:
+      "Knowledge-sharing platform for Indonesian youth learning from leading companies.",
+    description:
+      "Level Up by Digital Amoeba connects Indonesian youth with knowledge and practical skills from professionals in leading companies. The product surfaces learning opportunities and structured content in a Next.js web experience.",
+    role: "Frontend Developer",
+    tech: ["Next.js", "React Table", "React Query", "MUI", "Formik"],
+    tags: ["Next.js", "EdTech", "MUI"],
+    achievements: [
+      "Built the public learning platform UI on Next.js",
+      "Data tables and filters with React Table + React Query",
+      "Formik-driven flows for structured content submission",
+    ],
+    whyStack: [
+      {
+        tech: "Next.js",
+        reason:
+          "Content-heavy learning surfaces benefit from routing and a solid public web baseline.",
+      },
+      {
+        tech: "React Query + React Table",
+        reason:
+          "Catalog and skill listings needed predictable fetching with dense tabular UI.",
+      },
+      {
+        tech: "MUI + Formik",
+        reason:
+          "Material patterns and Formik kept forms and admin-adjacent screens consistent.",
+      },
+    ],
+    status: "archived",
+    cover: ["#1a1020", "#e07a5f"],
+    screenshots: [
+      {
+        src: "/projects/levelup.png",
+        alt: "Level Up by Digital Amoeba platform",
+        caption: "Platform",
+      },
+    ],
+  },
 ];
 
 export const NOW = {
@@ -415,11 +414,19 @@ export const NOW = {
   updated: "Sep 2026",
 } as const;
 
+/**
+ * LinkedIn-style durations (inclusive months through Sep 2026).
+ * Section total = sum of role lengths (overlaps count twice — LinkedIn convention).
+ * Career span Jun 2020 → Present would be 6 yrs 4 mos; we show the sum instead.
+ */
+export const EXPERIENCE_TOTAL = "7 yrs 10 mos";
+
 export const EXPERIENCE = [
   {
     company: "RSYS",
     role: "Fullstack JavaScript Developer",
     period: "Feb 2025 — Present",
+    duration: "1 yr 8 mos",
     location: "Remote · Office in Bogor, Indonesia",
     highlights: [
       "Building fullstack JavaScript products for an IT services & consulting team",
@@ -431,6 +438,7 @@ export const EXPERIENCE = [
     company: "Self-employed",
     role: "Fullstack JavaScript Developer",
     period: "Jul 2022 — Present",
+    duration: "4 yrs 3 mos",
     location: "Remote · Worldwide",
     highlights: [
       "Top-Rated on Upwork (top 10%) — product work for international clients",
@@ -443,6 +451,7 @@ export const EXPERIENCE = [
     company: "PT Neural Technologies Indonesia",
     role: "Frontend Developer",
     period: "May 2021 — Jan 2023",
+    duration: "1 yr 9 mos",
     location: "Remote · Office in Jakarta Selatan, Indonesia",
     highlights: [
       "Led Telkomsel’s provider comparison dashboard in React.js",
@@ -455,6 +464,7 @@ export const EXPERIENCE = [
     company: "Remote Work",
     role: "Frontend Web & Mobile Developer",
     period: "Jun 2020 — Jul 2020",
+    duration: "2 mos",
     location: "Jawa Timur, Indonesia",
     highlights: [
       "Built a seller store-management web app integrating Shopee, Tokopedia, and Tokoku",

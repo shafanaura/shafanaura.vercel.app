@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AvatarPhoto } from "@/components/AvatarPhoto";
 import { Reveal } from "@/components/ui/motion";
 import { TechChip } from "@/components/TechIcon";
 import { PillButton, Shell } from "@/components/ui/primitives";
 import { HeroField } from "@/components/HeroField";
+import { UpworkIcon } from "@/components/icons";
 import { EASE } from "@/lib/constants";
 import { HERO, SITE } from "@/lib/site";
 import { useSite } from "@/providers/LumoraProvider";
@@ -44,17 +44,9 @@ export function Hero() {
                 {HERO.eyebrow}
               </p>
 
-              <div className="mb-4 flex items-center gap-3">
-                <AvatarPhoto
-                  width={48}
-                  height={48}
-                  className="size-12 rounded-full ring-2 ring-white/25"
-                  imgClassName="rounded-full"
-                />
-                <p className="font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
-                  {HERO.brandLine}
-                </p>
-              </div>
+              <p className="mb-4 font-display text-sm font-semibold tracking-[0.2em] text-white/50 uppercase sm:text-base">
+                {HERO.brandLine}
+              </p>
 
               <h1 className="max-w-[16ch] font-display text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 {HERO.headline}
@@ -78,8 +70,9 @@ export function Hero() {
                   href={SITE.social.upwork}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/50 underline-offset-4 transition hover:text-accent-bright hover:underline"
+                  className="inline-flex items-center gap-1.5 text-sm text-white/50 underline-offset-4 transition hover:text-accent-bright hover:underline"
                 >
+                  <UpworkIcon size="0.9rem" aria-hidden />
                   Upwork profile
                 </a>
               </div>
