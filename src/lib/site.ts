@@ -1,5 +1,7 @@
 /** Content hub — swap placeholders (testimonials, resume, screenshots) when ready. */
 
+import type { ExperienceEnd, ExperienceMonth } from "@/lib/experience";
+
 export const SITE = {
   name: "Shafa Naura",
   mark: "ship.",
@@ -417,18 +419,16 @@ export const NOW = {
 } as const;
 
 /**
- * LinkedIn-style durations (inclusive months through Sep 2026).
+ * Experience roles use machine-readable `start` / `end` (`"YYYY-MM"` | `"present"`).
+ * Durations and period labels are derived at render time (LinkedIn inclusive months).
  * Section total = sum of role lengths (overlaps count twice — LinkedIn convention).
- * Career span Jun 2020 → Present would be 6 yrs 4 mos; we show the sum instead.
  */
-export const EXPERIENCE_TOTAL = "7 yrs 10 mos";
-
 export type ExperienceEntry = {
   company: string;
   companyUrl?: string;
   role: string;
-  period: string;
-  duration: string;
+  start: ExperienceMonth;
+  end: ExperienceEnd;
   location: string;
   /** Short LinkedIn-style role blurb (1–3 sentences). */
   summary: string;
@@ -441,8 +441,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
     company: "RSYS",
     companyUrl: "https://rsys.app",
     role: "Fullstack JavaScript Developer",
-    period: "Feb 2025 — Present",
-    duration: "1 yr 8 mos",
+    start: "2025-02",
+    end: "present",
     location: "Remote · Office in Bogor, Indonesia",
     summary:
       "Placed at a multinational FMCG company to build an internal digital workspace for employees and vendors. Focused on turning manual processes into an integrated, scalable platform used across the business.",
@@ -458,8 +458,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: "Self-employed",
     role: "Fullstack JavaScript Developer",
-    period: "Jul 2022 — Present",
-    duration: "4 yrs 3 mos",
+    start: "2022-07",
+    end: "present",
     location: "Remote · Worldwide",
     summary:
       "Top-Rated freelance fullstack developer on Upwork, building React, Next.js, and Vite applications for international clients. Projects span green energy, education, AI, and travel — owning delivery from UI through APIs and handoff.",
@@ -474,8 +474,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
     company: "PT Neural Technologies Indonesia",
     companyUrl: "http://nti.co.id/",
     role: "Frontend Developer",
-    period: "May 2021 — Jan 2023",
-    duration: "1 yr 9 mos",
+    start: "2021-05",
+    end: "2023-01",
     location: "Remote · Office in Jakarta Selatan, Indonesia",
     summary:
       "Frontend developer who led Telkomsel’s provider comparison dashboard in React.js. Built data visualizations with ECharts and Mapbox, and improved performance and UX from real user feedback.",
@@ -489,8 +489,8 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: "Remote Work",
     role: "Frontend Web & Mobile Developer",
-    period: "Jun 2020 — Jul 2020",
-    duration: "2 mos",
+    start: "2020-06",
+    end: "2020-07",
     location: "Jawa Timur, Indonesia",
     summary:
       "Built a seller store-management web app integrating Shopee, Tokopedia, and Tokoku, plus an online cashier app for cafes covering employees, menus, and income tracking. Owned design and prototyping in Framer alongside implementation.",
