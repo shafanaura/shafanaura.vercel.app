@@ -421,9 +421,21 @@ export const NOW = {
  */
 export const EXPERIENCE_TOTAL = "7 yrs 10 mos";
 
-export const EXPERIENCE = [
+export type ExperienceEntry = {
+  company: string;
+  companyUrl?: string;
+  role: string;
+  period: string;
+  duration: string;
+  location: string;
+  highlights: readonly string[];
+  stack: readonly string[];
+};
+
+export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: "RSYS",
+    companyUrl: "https://rsys.app",
     role: "Fullstack JavaScript Developer",
     period: "Feb 2025 — Present",
     duration: "1 yr 8 mos",
@@ -449,6 +461,7 @@ export const EXPERIENCE = [
   },
   {
     company: "PT Neural Technologies Indonesia",
+    companyUrl: "http://nti.co.id/",
     role: "Frontend Developer",
     period: "May 2021 — Jan 2023",
     duration: "1 yr 9 mos",
@@ -473,7 +486,7 @@ export const EXPERIENCE = [
     ],
     stack: ["React", "JavaScript", "Framer"],
   },
-] as const;
+];
 
 export const HOW_I_WORK = {
   eyebrow: "How I work",

@@ -58,9 +58,20 @@ export function Experience() {
                   <h3 className="font-display text-xl font-bold tracking-tight sm:text-2xl">
                     {job.role}
                   </h3>
-                  <p className="mt-1 text-sm font-medium text-foreground/80">
-                    {job.company}
-                  </p>
+                  {job.companyUrl ? (
+                    <a
+                      href={job.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-block text-sm font-medium text-foreground/80 underline-offset-2 transition hover:text-accent hover:underline"
+                    >
+                      {job.company}
+                    </a>
+                  ) : (
+                    <p className="mt-1 text-sm font-medium text-foreground/80">
+                      {job.company}
+                    </p>
+                  )}
                 </div>
                 <div className="shrink-0 font-mono text-[0.7rem] text-muted sm:text-right">
                   <p>
