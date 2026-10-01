@@ -78,11 +78,11 @@ export function Portfolio() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <Reveal>
-              <Eyebrow>Selected work</Eyebrow>
+              <Eyebrow>Past work</Eyebrow>
             </Reveal>
             <LineReveal
               as="h2"
-              lines={["Case studies"]}
+              lines={["What I’ve shipped"]}
               delay={80}
               className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl"
             />

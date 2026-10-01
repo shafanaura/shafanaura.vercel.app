@@ -98,7 +98,7 @@ export function Hero() {
                 ))}
               </ul>
               <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-[0.65rem] text-white/40">
-                <span>v{SITE.workingSince}+</span>
+                <span>{HERO.stackNote}</span>
                 <span className="text-accent-bright">online</span>
               </div>
             </Reveal>
