@@ -117,7 +117,7 @@ export function NavMenu() {
           }}
           className="text-left text-accent-bright hover:underline"
         >
-          Start a project →
+          Work with me →
         </button>
       </Shell>
     </div>

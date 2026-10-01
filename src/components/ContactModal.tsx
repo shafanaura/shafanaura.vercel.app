@@ -46,7 +46,7 @@ export function ContactModal() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Start a project"
+      aria-label="Work with me"
       className="fixed inset-0 z-[110] flex items-end justify-center p-4 sm:items-center"
       style={{
         background: "rgba(11,16,32,0.5)",
@@ -96,7 +96,7 @@ export function ContactModal() {
             <div className="mb-6 space-y-1.5">
               <span className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.14em] text-muted uppercase">
                 <span className="size-1.5 rounded-full bg-accent" />
-                Start a project
+                Work with me
               </span>
               <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
                 Tell me what you&apos;re building.
@@ -145,7 +145,7 @@ export function ContactModal() {
                   href={`mailto:${SITE.email}`}
                   className="text-xs text-muted transition hover:text-accent"
                 >
-                  Or email {SITE.email}
+                  Or email me
                 </a>
                 <PillButton
                   variant="accent"

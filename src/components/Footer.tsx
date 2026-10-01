@@ -48,6 +48,12 @@ export function Footer() {
             <p className="mt-3 max-w-xs text-sm text-white/50">
               {FOOTER.tagline}
             </p>
+            <AnimatedLink
+              href={SITE.repository}
+              className="mt-4 text-white/65 hover:text-accent-bright"
+            >
+              {FOOTER.source}
+            </AnimatedLink>
           </div>
 
           {Object.entries(FOOTER.columns).map(([title, links]) => (
@@ -107,7 +113,7 @@ export function Footer() {
             href={`mailto:${SITE.email}`}
             className="transition hover:text-accent-bright"
           >
-            {SITE.email}
+            {SITE.emailLabel}
           </a>
         </div>
       </Shell>

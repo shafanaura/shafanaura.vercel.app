@@ -14,8 +14,9 @@ export const SITE = {
   role: "Fullstack Developer",
   location: "Remote · Asia / Worldwide",
   timezone: "UTC+7 (WIB)",
-  workingSince: 2021,
   email: "shafanaura48@gmail.com",
+  emailLabel: "Email me",
+  repository: "https://github.com/shafanaura/shafanaura.vercel.app",
   resumeUrl: "#resume", // replace with real PDF path later
   avatar: "/avatar.jpg",
   social: {
@@ -32,9 +33,10 @@ export const HERO = {
   headline: "I build products from the first pixel to the last deploy.",
   support:
     "Fullstack JS/TS — Next.js on the client, NestJS on the API, with Postgres and Redis underneath.",
-  ctaPrimary: "Start a project",
-  ctaSecondary: "See selected work",
-  statusLeft: `Since ${SITE.workingSince}`,
+  ctaPrimary: "Work with me",
+  ctaSecondary: "See my work",
+  statusLeft: "5+ years",
+  stackNote: "UTC+7",
   statusCenter: SITE.location,
   statusRight: "Scroll",
   stack: [
@@ -411,9 +413,9 @@ export const PROJECTS: Project[] = [
 export const NOW = {
   eyebrow: "Now",
   items: [
-    "Open for freelance on Upwork and direct — Next.js + NestJS fullstack product work",
-    "Exploring stronger design-system and DX patterns across client stacks",
-    "Shipping case studies with real product screenshots on this site",
+    "Available for freelance, on Upwork or by email.",
+    "Focusing on design systems and smoother workflows in client projects.",
+    "Adding real screenshots from products I’ve shipped.",
   ],
   updated: "Sep 2026",
 } as const;
@@ -553,7 +555,7 @@ export const TESTIMONIALS = [
     quote:
       "She was diligent, hardworking, and delivered quality results. Highly recommended!",
     name: "Upwork client",
-    role: "Frontend React.js Engineer",
+    role: "Frontend React.js",
     source: "Upwork",
   },
 ] as const;
@@ -624,25 +626,29 @@ export const SKILLS = [
   {
     index: "01",
     title: "Product UI",
-    description: "Next.js / React for search, booking, dashboards, and marketing surfaces.",
+    description:
+      "Next.js / React for search, booking, dashboards, and marketing surfaces.",
     tech: ["Next.js", "React", "TypeScript"],
   },
   {
     index: "02",
     title: "APIs & services",
-    description: "NestJS + TypeScript modules for auth, bookings, and domain logic.",
+    description:
+      "NestJS + TypeScript modules for auth, bookings, and domain logic.",
     tech: ["NestJS", "TypeScript", "Node"],
   },
   {
     index: "03",
     title: "Data layer",
-    description: "PostgreSQL as source of truth; Redis for cache, sessions, and queues.",
+    description:
+      "PostgreSQL as source of truth; Redis for cache, sessions, and queues.",
     tech: ["PostgreSQL", "Redis"],
   },
   {
     index: "04",
     title: "Migrations & systems",
-    description: "No-code → Next rebuilds, design systems, and end-to-end delivery.",
+    description:
+      "No-code → Next rebuilds, design systems, and end-to-end delivery.",
     tech: ["Next.js", "React Query", "Tailwind CSS"],
   },
 ] as const;
@@ -672,13 +678,13 @@ export const ABOUT = {
   statementMuted:
     "UI, APIs, and data layers that hold up in production, not just look good in a demo.",
   distributed:
-    "Remote fullstack from Asia (UTC+7). Async by default — I own the feature through ship.",
+    "Based in Indonesia (UTC+7). I work remotely and async, and I own the feature through ship.",
   findOnline: "Elsewhere",
 } as const;
 
 export const FOOTER = {
   ctaLines: ["Got a product in mind?", "Let's build it properly."] as const,
-  ctaButton: "Start a project",
+  ctaButton: "Work with me",
   tagline:
     "Fullstack developer — Next.js, NestJS, Postgres, and Redis for products that ship end to end.",
   columns: {
@@ -698,4 +704,5 @@ export const FOOTER = {
     ],
   },
   legal: `© ${new Date().getFullYear()} ${SITE.name}`,
+  source: "This site’s source code",
 };

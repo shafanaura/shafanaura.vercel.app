@@ -102,9 +102,9 @@ export function About() {
               </div>
               <a
                 href={`mailto:${SITE.email}`}
-                className="mt-4 inline-block font-mono text-xs text-muted break-all transition hover:text-accent"
+                className="mt-4 inline-block font-mono text-xs text-muted transition hover:text-accent"
               >
-                {SITE.email}
+                {SITE.emailLabel}
               </a>
             </div>
           </Reveal>
@@ -125,7 +125,7 @@ export function About() {
               arrow="right"
               onClick={() => scrollToId("works")}
             >
-              View work
+              See my work
             </PillButton>
           </div>
         </div>
